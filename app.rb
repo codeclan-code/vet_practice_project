@@ -1,6 +1,5 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-
-get '/' do
-  erb( :index )
-end
+require_relative('models/pet')
+require_relative('models/vet')
+also_reload('./models/*')
