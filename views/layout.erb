@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= @title %></title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+  <link rel="icon" href="/images/xxx.png" />
+
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<main>
+  <div class="grid">
+    <div class="nav-box">
+      <nav>
+        <ul class="flex">
+          <li>
+            <a href="/pets/new">Register New Pet</a>
+          </li>
+          <li>
+            <a href="/pets/:id">Updates and Appointments</a>
+          </li>
+          <li>
+            <a href="/shedule">Daily Schedule</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      <div class="content-box">
+        <section id="content">
+        <%= yield %>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

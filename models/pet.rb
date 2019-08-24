@@ -36,5 +36,50 @@ class Pet
     @id = id
   end
 
+  def update()
+    sql = "UPDATE pets
+    SET
+    (
+      name,
+      date_of_birth,
+      pet_type,
+      owner_name,
+      owner_mobile,
+      vet_id
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6
+    )
+    WHERE id = $7"
+    values = [@name, @date_of_birth, @pet_type, @owner_name, @owner_mobile, @vet_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM pets
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM pets"
+    pet_data = SqlRunner.run(sql)
+    pets = map_items(pet_data)
+    return pets
+  end
+
+  def self.map_items(pet_data)
+    return pet_data.map { |pet| Pet.new(pet) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM pets
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    pet = Pet.new(result)
+    return pet
+  end
 
 end

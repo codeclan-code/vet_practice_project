@@ -3,10 +3,10 @@ require_relative('../models/vet')
 require('pry')
 
 vet1 = Vet.new({'name' => 'Dr Smith'})
-vet1.save
+# vet1.save
 
 vet2 = Vet.new({'name' => 'Dr Jones'})
-vet2.save
+# vet2.save
 
 
 pet1 = Pet.new({
@@ -18,7 +18,7 @@ pet1 = Pet.new({
   'vet_id' => vet1.id
    })
 
-pet1.save
+# pet1.save
 
 pet2 = Pet.new({
   'name' => 'King',
@@ -29,7 +29,7 @@ pet2 = Pet.new({
   'vet_id' => vet2.id
    })
 
-pet2.save
+# pet2.save
 
 binding.pry
 nil
