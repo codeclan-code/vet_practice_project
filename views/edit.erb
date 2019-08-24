@@ -1,0 +1,68 @@
+<h2>Edit <%= @pet.name %></h2>
+
+  <div class="form-wrapper">
+  <form method="post" action="/pets/<%= @pet.id %>">
+  <label for="pet-name-field">Pet Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="pet-name-field"
+  value="<%= @pet.name %>"
+  />
+
+  <label for="date-of-birth-field">Date of Birth:</label>
+  <input
+  type="text"
+  name="date_of_birth"
+  id="date-of-birth-field"
+  value="<%= @pet.date_of_birth %>"
+  />
+
+  <label for="pet-type-selection">Select Pet Type:</label>
+  <select name="pet_type" id="pet-type-selection">
+    <% @pets.each do |pet| %>
+    <% if pet.pet_type %>
+    <option value=<%= pet.pet_type%> selected><%= pet.pet_type.capitalize %></option>
+<% else %>
+<option value=<%=pet.pet_type %>><%= pet.pet_type.capitalize %></option>
+
+    <!-- <option value="Cat">Cat</option>
+    <option value="Dog">Dog</option>
+    <option value="Horse">Horse</option>
+    <option value="Spider">Spider</option>
+    <option value="Snake">Snake</option>
+    <option value="Other">Other</option> -->
+    <% end %>
+    <% end %>
+  </select>
+
+  <label for="owner-name-field">Owner's name:</label>
+  <input
+  type="text"
+  name="owner_name"
+  id="owner-name-field"
+  value="<%= @pet.owner_name %>"
+  />
+
+  <label for="owner-mobile-field">Owner's Mobile:</label>
+  <input
+  type="text"
+  name="owner_mobile"
+  id="owner-mobile-field"
+  value="<%= @pet.owner_mobile %>"
+  />
+
+  <label for="vet-selection">Select Vet:</label>
+  <select name="vet_id" id="vet-selection">
+    <% @vets.each do |vet| %>
+    <% if vet.id == @pet.vet_id %>
+    <option value=<%= vet.id %> selected><%= vet.name.capitalize %></option>
+    <% else %>
+      <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
+   <% end %>
+<% end %>
+  </select>
+
+  <input type="submit" value="Update Pet">
+</form>
+</div>

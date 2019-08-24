@@ -1,0 +1,8 @@
+<h2><%= @pet.name %></h2>
+
+<p>Pet: <%= @pet.name%></p>
+<p>Type: <%= @pet.pet_type %></p>
+<p>Vet: <%= @pet.vet.name %></p>
+
+<a href="/pets/<%= @pet.id %>/edit">Edit</a>
+<form action="/pets/<%= @pet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

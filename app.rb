@@ -40,7 +40,29 @@ post '/pets' do # create
 end
 
 # edit - GET FORM BY ID TO EDIT
+get '/pets/:id' do
+  @pet = Pet.find(params['id'])
+  erb(:show)
+end
+
+get '/pets/:id/edit' do
+  @vets = Vet.all
+  @pets = Pet.all
+  @pet = Pet.find(params['id'])
+  erb(:edit)
+end
 
 # update - POST FORM AFTER EDIT
+post '/pets/:id' do
+  pet = Pet.new(params)
+  pet.update
+  redirect to "/pets/#{params['id']}"
+# redirect to confrmation page
+end
 
 # destroy - POST ID DELETE
+post '/pets/:id/delete' do
+  pet = Pet.find(params['id'])
+  pet.delete
+  redirect to '/pets'
+end
