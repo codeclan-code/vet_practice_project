@@ -96,4 +96,12 @@ class Pet
     return pet
   end
 
+  def self.vetspets(vet_id)
+    sql = "SELECT * FROM pets WHERE vet_id = $1"
+    values  = [vet_id]
+    pet_data = SqlRunner.run(sql, values)
+    pets = map_items(pet_data)
+    return pets
+  end
+
 end
