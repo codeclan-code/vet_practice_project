@@ -36,6 +36,11 @@ class Pet
     @id = id
   end
 
+  def vet()
+    vet = Vet.find(@vet_id)
+    return vet
+  end
+
   def update()
     sql = "UPDATE pets
     SET
@@ -81,5 +86,7 @@ class Pet
     pet = Pet.new(result)
     return pet
   end
+
+
 
 end
