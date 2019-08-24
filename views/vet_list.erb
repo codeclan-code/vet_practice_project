@@ -1,0 +1,9 @@
+<% @pets.each do |pet| %>
+  <table>
+    <tr>
+      <td><a href = "/pets/<%= pet.id%>" ><%= pet.name%> </a></td>
+    <td><%= pet.pettype.pet_type%></td>
+      <td><%= pet.vet.name%></td>
+    </tr>
+  </table>
+<% end %>
