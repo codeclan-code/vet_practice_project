@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('./models/pet')
 require_relative('./models/vet')
+require_relative('./models/pettype')
 also_reload('./models/*')
 
 #404 Error! - Not Found
@@ -47,7 +48,6 @@ end
 
 get '/pets/:id/edit' do
   @vets = Vet.all
-  @pets = Pet.all
   @pet = Pet.find(params['id'])
   erb(:edit)
 end
