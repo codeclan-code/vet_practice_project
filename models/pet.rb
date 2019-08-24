@@ -2,17 +2,19 @@ require_relative('../db/sql_runner')
 
 class Pet
 
-  attr_accessor :name, :date_of_birth, :pet_type, :owner_name, :owner_mobile, :vet_id
+  attr_accessor :name, :date_of_birth, :pet_type_id, :owner_name, :owner_mobile, :vet_id, :treatment_notes
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @date_of_birth = options['date_of_birth']
-    @pet_type = options['pet_type']
+    @pet_type_id = options['pet_type_id'].to_i
     @owner_name = options['owner_name']
     @owner_mobile = options['owner_mobile']
     @vet_id = options['vet_id'].to_i
+    @treatment_notes = options['treatment_notes']
+
   end
 
   def save()
@@ -20,17 +22,18 @@ class Pet
     (
       name,
       date_of_birth,
-      pet_type,
+      pet_type_id,
       owner_name,
       owner_mobile,
-      vet_id
+      vet_id,
+      treatment_notes
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING id"
-    values = [@name, @date_of_birth, @pet_type, @owner_name, @owner_mobile, @vet_id]
+    values = [@name, @date_of_birth, @pet_type_id, @owner_name, @owner_mobile, @vet_id, @treatment_notes]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id
@@ -41,22 +44,28 @@ class Pet
     return vet
   end
 
+  def pettype()
+    pet_type = PetType.find(@pet_type_id)
+    return pet_type
+  end
+
   def update()
     sql = "UPDATE pets
     SET
     (
       name,
       date_of_birth,
-      pet_type,
+      pet_type_id,
       owner_name,
       owner_mobile,
-      vet_id
+      vet_id,
+      treatment_notes
     ) =
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
-    WHERE id = $7"
-    values = [@name, @date_of_birth, @pet_type, @owner_name, @owner_mobile, @vet_id, @id]
+    WHERE id = $8"
+    values = [@name, @date_of_birth, @pet_type_id, @owner_name, @owner_mobile, @vet_id, @treatment_notes, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -86,7 +95,5 @@ class Pet
     pet = Pet.new(result)
     return pet
   end
-
-
 
 end

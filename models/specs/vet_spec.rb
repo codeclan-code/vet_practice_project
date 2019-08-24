@@ -1,7 +1,7 @@
 require("minitest/autorun")
 require_relative("../vet")
 
-class TestPizzaOrder < MiniTest::Test
+class TestVet < MiniTest::Test
 
   def setup
     options = {"name" => "Dr Henderson" }

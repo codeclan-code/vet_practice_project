@@ -1,4 +1,5 @@
-<form method="post" action="/pets">
+<div class="form-wrapper">
+  <form method="post" action="/pets">
   <label for="pet-name-field">Pet Name:</label>
   <input
   type="text"
@@ -14,13 +15,13 @@
   />
 
   <label for="pet-type-selection">Select Pet Type:</label>
-  <select name="pet_type" id="pet-type-selection">
-    <option value="Cat">Cat</option>
-    <option value="Dog">Dog</option>
-    <option value="Horse">Horse</option>
-    <option value="Spider">Spider</option>
-    <option value="Snake">Snake</option>
-    <option value="Other">Other</option>
+  <select name="pet_type_id" id="pet-type-selection">
+    <option value="1">Cat</option>
+    <option value="2">Dog</option>
+    <option value="3">Horse</option>
+    <option value="4">Spider</option>
+    <option value="5">Snake</option>
+    <option value="6">Other</option>
   </select>
 
   <label for="owner-name-field">Owner's name:</label>
@@ -43,5 +44,10 @@
     <option value="2">Dr Jones</option>
   </select>
 
+  <label for="treatment-notes">Treatment Notes:</label>
+  <textarea rows="10" cols="50" id="treatment-notes" name='treatment_notes'>
+  </textarea>
+
   <input type="submit" value="Register Pet">
 </form>
+</div>

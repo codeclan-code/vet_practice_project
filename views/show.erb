@@ -1,7 +1,7 @@
 <h2><%= @pet.name %></h2>
 
 <p>Pet: <%= @pet.name%></p>
-<p>Type: <%= @pet.pet_type %></p>
+<p>Type: <%= @pet.pettype.pet_type %></p>
 <p>Vet: <%= @pet.vet.name %></p>
 
 <a href="/pets/<%= @pet.id %>/edit">Edit</a>

@@ -48,6 +48,7 @@ end
 
 get '/pets/:id/edit' do
   @vets = Vet.all
+  @pettype = PetType.all
   @pet = Pet.find(params['id'])
   erb(:edit)
 end

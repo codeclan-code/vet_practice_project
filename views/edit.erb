@@ -19,16 +19,17 @@
     />
 
     <label for="pet-type-selection">Select Pet Type:</label>
-    <select name="pet_type" id="pet-type-selection">
-      <option value="Cat">Cat</option>
-      <option value="Dog">Dog</option>
-      <option value="Horse">Horse</option>
-      <option value="Spider">Spider</option>
-      <option value="Snake">Snake</option>
-      <option value="Other">Other</option>
+    <select name="pet_type_id" id="pet-type-selection">
+      <% @pettype.each do |type| %>
+      <% if type.id == @pet.pet_type_id %>
+      <option value=<%= type.id %> selected><%= type.pet_type.capitalize %></option>
+      <% else %>
+      <option value=<%= type.id %>><%= type.pet_type.capitalize %></option>
+      <% end %>
+      <% end %>
     </select>
 
-    <label for="owner-name-field">Owner's name:</label>
+    <label for="owner-name-field">Owner's Name:</label>
     <input
     type="text"
     name="owner_name"
@@ -54,6 +55,12 @@
       <% end %>
       <% end %>
     </select>
+
+    <label for="treatment-notes">Treatment Notes:</label>
+    <textarea rows="10" cols="50" id="treatment-notes"
+    name='treatment_notes'>
+    <%= @pet.treatment_notes %>
+    </textarea>
 
     <input type="submit" value="Update Pet">
   </form>
