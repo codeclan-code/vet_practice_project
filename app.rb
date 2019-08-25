@@ -1,9 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('./models/pet')
-require_relative('./models/vet')
-require_relative('./models/pettype')
-also_reload('./models/*')
+require_relative('controllers/pets_controller')
 
 #404 Error! - Not Found
 error Sinatra::NotFound do
@@ -17,79 +14,4 @@ end
 get '/' do
   @title = "Acorn Vet Practice"
   erb( :index )
-end
-
-get '/pets' do # index
-  @pets = Pet.all()
-  erb( :list )
-end
-
-# <div id='footer'> INCLUDE OTHER FILES IN ERB
-#       <%= erb :footer %>
-#     </div>
-
-# get '/vet' do # index
-#   # @pets = Pet.all()
-#   @title = "Vet's Schedule"
-#   erb( :vet )
-# end
-
-get '/vet/list' do # index
-  @pets = Pet.all()
-  @title = "Vet's Schedule"
-  # erb( :vet_list )
-  erb :'vets', :layout => :vets_layout
-end
-
-get '/vet/:id' do # index
-  @pets = Pet.vetspets(params['id'])
-  erb :'vet_list', :layout => :vets_layout
-  # erb :'vet_list', :layout => :vets_layout
-end
-
-# PETS ADD, UPDATE, LIST, DELETE
-# show - GET FIND BY ID
-
-
-# new - GET NEW PET ORDER FORM
-get '/pets/new' do # new
-  @pet = Pet.all()
-  @title = "Register a New Pet"
-  erb( :new )
-end
-
-# create - POST FORM TO CREATE
-post '/pets' do # create
-  @pet = Pet.new( params )
-  @pet.save()
-  @title = "#{@pet.name} Pet Registered"
-  erb( :create )
-end
-
-# edit - GET FORM BY ID TO EDIT
-get '/pets/:id' do
-  @pet = Pet.find(params['id'])
-  erb(:show)
-end
-
-get '/pets/:id/edit' do
-  @vets = Vet.all
-  @pettype = PetType.all
-  @pet = Pet.find(params['id'])
-  erb(:edit)
-end
-
-# update - POST FORM AFTER EDIT
-post '/pets/:id' do
-  pet = Pet.new(params)
-  pet.update
-  redirect to "/pets/#{params['id']}"
-  # redirect to confrmation page
-end
-
-# destroy - POST ID DELETE
-post '/pets/:id/delete' do
-  pet = Pet.find(params['id'])
-  pet.delete
-  redirect to '/pets'
 end
