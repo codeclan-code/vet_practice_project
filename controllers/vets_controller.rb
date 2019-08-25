@@ -23,8 +23,6 @@ get '/vets/list' do # index
   erb (:"vets/index"), :layout => (:"vets/vets_layout")
 end
 
-
-
 # VET CRUD VET CRUD VET CRUD VET CRUD VET CRUD
 
 get '/vets_list' do # index
@@ -39,6 +37,8 @@ end
 # new - GET NEW PET ORDER FORM
 get '/vets/new' do # new
   # @vet = Vet.all()
+  # @pets = Pet.all()
+  # @pettype = PetType.all
   @title = "Add a New Vet"
   erb( :"vets/new" )
 end
@@ -49,38 +49,6 @@ post '/vets' do # create
   @vet.save()
   @title = "#{@vet.name} has been Added"
   erb( :"vets/create" )
-end
-
-# edit - GET FORM BY ID TO EDIT
-get '/pets/:id' do
-  @pet = Pet.find(params['id'])
-  @title = "Pet Details"
-  erb(:"pets/show")
-end
-
-get '/pets/:id/edit' do
-  @vets = Vet.all
-  @pettype = PetType.all
-  @pet = Pet.find(params['id'])
-  @title = "Edit Pet Details"
-  erb(:"pets/edit")
-end
-
-# update - POST FORM AFTER EDIT
-post '/pets/:id' do
-  pet = Pet.new(params)
-  pet.update
-  @title = "Update Pet Details"
-  redirect to "/pets/#{params['id']}"
-  # redirect to confrmation page
-end
-
-# destroy - POST ID DELETE
-post '/pets/:id/delete' do
-  pet = Pet.find(params['id'])
-  pet.delete
-  @title = "Delete Pet Details"
-  redirect to '/pets'
 end
 
 get '/vets/:id' do # index

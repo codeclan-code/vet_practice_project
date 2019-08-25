@@ -19,16 +19,14 @@ get '/pets' do # index
 end
 
 # PETS ADD, UPDATE, LIST, DELETE
-# show - GET FIND BY ID
 
-# new - GET NEW PET ORDER FORM
+# GET NEW PET FORM
 get '/pets/new' do # new
-  @pet = Pet.all()
   @title = "Register a New Pet"
   erb( :"pets/new" )
 end
 
-# create - POST FORM TO CREATE
+# POST FORM TO CREATE RECORD
 post '/pets' do # create
   @pet = Pet.new( params )
   @pet.save()
@@ -36,7 +34,7 @@ post '/pets' do # create
   erb( :"pets/create" )
 end
 
-# edit - GET FORM BY ID TO EDIT
+# GET PET BY ID TO EDIT
 get '/pets/:id' do
   @pet = Pet.find(params['id'])
   @title = "Pet Details"
