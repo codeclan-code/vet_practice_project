@@ -5,27 +5,28 @@
   <title><%= @title %></title>
   <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
   <link rel="icon" href="/images/xxx.png" /> -->
-<!-- Add icon font -->
-<link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <!-- Add icon font -->
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
-<main>
-  <div class="grid">
-    <div class="nav-box">
-      <%= erb :top_nav %>
+  <main>
+    <div class="grid">
+      <h2>Acorn Vet/Pet Management Application</h2>
+      <div class="nav-box">
+        <%= erb(:"nav/top_nav") %>
       </div>
       <div class="content-box">
         <section id="content">
           <h1>Vet Schedules</h1>
           <ul>
-            <li><a href="/vet/1">Dr Smith</a></li>
-            <li><a href="/vet/2">Dr Jones</a></li>
+            <li><a href="/vets/1">Dr Smith</a></li>
+            <li><a href="/vets/2">Dr Jones</a></li>
           </ul>
-        <%= yield %>
+          <%= yield %>
         </section>
       </div>
     </div>
   </main>
-   <%= erb :footer %>
+  <%= erb(:"nav/footer") %>
 </body>
 </html>

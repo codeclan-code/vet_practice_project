@@ -1,11 +1,13 @@
 <h2><%= @pet.name %></h2>
 
-<p>Pet: <%= @pet.name%></p>
+<p>Pet Name: <%= @pet.name%></p>
 <p>Date of Birth: <%= @pet.date_of_birth%></p>
 <p>Type: <%= @pet.pettype.pet_type %></p>
 <p>Owner's Name: <%= @pet.owner_name %></p>
 <p>Owners Mobile: <%= @pet.owner_mobile %></p>
 <p>Vet: <%= @pet.vet.name %></p>
+<p>Treatment Notes:</p>
+<p><%= @pet.treatment_notes %> </p>
 
 <p><a href="/pets/<%= @pet.id %>/edit">Edit</a></p>
 <form action="/pets/<%= @pet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

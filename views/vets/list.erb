@@ -1,0 +1,7 @@
+<% @vets.each do |vet| %>
+  <table>
+    <tr>
+      <td><a href = "/vets/<%= vet.id%>" ><%= vet.name%> </a></td>
+    </tr>
+  </table>
+<% end %>
