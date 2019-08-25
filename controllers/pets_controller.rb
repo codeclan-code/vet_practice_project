@@ -18,10 +18,10 @@ get '/pets' do # index
   erb(:"pets/list")
 end
 
-# PETS ADD, UPDATE, LIST, DELETE
-
 # GET NEW PET FORM
 get '/pets/new' do # new
+  @pet_type = PetType.all()
+  @pets = Pet.all()
   @title = "Register a New Pet"
   erb( :"pets/new" )
 end

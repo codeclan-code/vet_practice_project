@@ -1,0 +1,13 @@
+<!-- Add tabindex="x" to form Objects -->
+<div class="form-wrapper">
+  <form method="post" action="/vets/<%= @vet.id %>">
+  <label for="vet-name-field">Vet Name:</label>
+  <input required
+  type="text"
+  name="name"
+  id="vet-name-field"
+  value="<%= @vet.name %>"
+  />
+  <input type="submit" value="Update Vet">
+</form>
+</div>

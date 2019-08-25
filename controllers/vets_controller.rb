@@ -12,33 +12,15 @@ not_found do
   erb(:oops)
 end
 
-get '/vets' do
-  @title = "Vet's Schedule"
-  erb(:"vets/index")
-end
-
-get '/vets/list' do # index
-  @pets = Pet.all()
-  @title = "Vet's Schedule"
-  erb (:"vets/index"), :layout => (:"vets/vets_layout")
-end
-
-# VET CRUD VET CRUD VET CRUD VET CRUD VET CRUD
-
-get '/vets_list' do # index
+get '/vets' do # index
   @vets = Vet.all()
   @title = "List of Vets"
   erb(:"vets/list")
 end
 
-# PETS ADD, UPDATE, LIST, DELETE
-# show - GET FIND BY ID
-
-# new - GET NEW PET ORDER FORM
+# new - GET NEW VET FORM
 get '/vets/new' do # new
-  # @vet = Vet.all()
-  # @pets = Pet.all()
-  # @pettype = PetType.all
+  @vets = Vet.all()
   @title = "Add a New Vet"
   erb( :"vets/new" )
 end
@@ -47,12 +29,56 @@ end
 post '/vets' do # create
   @vet = Vet.new( params )
   @vet.save()
-  @title = "#{@vet.name} has been Added"
+  # @title = "#{@vet.name} has been Added"
   erb( :"vets/create" )
 end
 
-get '/vets/:id' do # index
+# GET PET BY ID TO EDIT
+get '/vets/:id' do
+  @vet = Vet.find(params['id'])
+  @title = "Vet Details"
+  erb(:"vets/show")
+end
+
+get '/vets/:id/edit' do
+  @vet = Vet.find(params['id'])
+  @title = "Edit Vet Details"
+  erb(:"vets/edit")
+end
+
+
+# update - POST FORM AFTER EDIT
+post '/vets/:id' do
+  vet = Vet.new(params)
+  vet.update
+  @title = "Update Vet Details"
+  redirect to "/vets/#{params['id']}"
+end
+
+# destroy - POST ID DELETE
+post '/vets/:id/delete' do
+  vet = Vet.find(params['id'])
+  vet.delete
+  @title = "Delete Vet Details"
+  redirect to '/vets'
+end
+
+# EXTRAS
+
+get '/vets/schedule' do # index
+  @pets = Pet.all()
+  @title = "Vet's Schedule"
+  erb (:"vets/index"), :layout => (:"vets/vets_layout")
+end
+
+get '/vets/pets/:id' do # index
   @pets = Pet.vetspets(params['id'])
   @title = "Pet Vet Details"
   erb (:"vets/vet_list"), :layout => (:"vets/vets_layout")
+end
+
+get '/vets/admin' do # index
+  @vets = Vet.all()
+  @title = "List of Vets"
+  erb(:"vets/list")
 end
