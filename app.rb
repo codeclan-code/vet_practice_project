@@ -9,9 +9,7 @@ not_found do
   erb(:oops)
 end
 
-# index - GET LISTS ALL
 get '/' do
-  # @vets = Vet.all()
   @title = "Acorn Vet Practice"
   erb( :index )
 end
