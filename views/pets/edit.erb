@@ -49,9 +49,9 @@
     <select name="vet_id" id="vet-selection">
       <% @vets.each do |vet| %>
       <% if vet.id == @pet.vet_id %>
-      <option value=<%= vet.id %> selected><%= vet.name.capitalize %></option>
+      <option value=<%= vet.id %> selected><%= vet.name %></option>
       <% else %>
-      <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
+      <option value=<%= vet.id %>><%= vet.name %></option>
       <% end %>
       <% end %>
     </select>

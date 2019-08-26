@@ -6,7 +6,7 @@
   <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
   <link rel="icon" href="/images/xxx.png" /> -->
   <!-- Add icon font -->
-  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+<link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
   <main>
@@ -34,7 +34,7 @@
            <ul>
              <% @vets.each do |vet| %>
                <li>
-                 <a href='/vets/pets/<%= vet.id %>'><%= vet.name.capitalize %></a>
+                 <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
                </li>
              <% end %>
            </ul>

@@ -9,7 +9,8 @@ CREATE TABLE vets (
 
 CREATE TABLE pettypes (
   id SERIAL8 primary key,
-  pet_type VARCHAR(255)
+  pet_type VARCHAR(255),
+  pet_image VARCHAR(255)
 );
 
 CREATE TABLE pets (

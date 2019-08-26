@@ -1,26 +1,41 @@
 body
 {
+  background-color: white;
   font-family: sans-serif;
+  padding:5px;
+  margin: 5px;
+  border: 1px solid darkred;
+}
+
+main
+{
+margin:20px;
+
 }
 
 .form-wrapper
 {
-width:150px;
+width: 175px;
 }
 
 table {
   border: 1px solid gray;
+  width: 400px;
 }
 
 td
 {
   border: 1px solid gray;
-  width: 100px;
+  width: 200px;
 }
 
 label
 {
   font-weight:bold;;
+}
+
+.inputWrapper label{
+  display:block;
 }
 
 /* input:required {

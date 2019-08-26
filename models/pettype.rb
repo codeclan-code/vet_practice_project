@@ -2,24 +2,26 @@ require_relative('../db/sql_runner')
 
 class PetType
 
-  attr_reader :id, :pet_type
+  attr_reader :id, :pet_type, :pet_image
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @pet_type = options['pet_type']
+    @pet_image = options['pet_image']
   end
 
   def save()
     sql = "INSERT INTO pettypes
     (
-      pet_type
+      pet_type,
+      pet_image
     )
     VALUES
     (
-      $1
+      $1, $2
     )
     RETURNING id"
-    values = [@pet_type]
+    values = [@pet_type, @pet_image]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i

@@ -3,19 +3,20 @@ require_relative('../models/vet')
 require_relative('../models/pettype')
 require('pry')
 
-vet1 = Vet.new({'name' => 'Dr Smith'})
+vet1 = Vet.new({'name' => 'Dr Monica Smith'})
 vet1.save
 
-vet2 = Vet.new({'name' => 'Dr Jones'})
+vet2 = Vet.new({'name' => 'Dr Heather Jones'})
 vet2.save
 
-pettype1 = PetType.new ({'pet_type' => 'Cat'})
-pettype2 = PetType.new ({'pet_type' => 'Dog'})
-pettype3 = PetType.new ({'pet_type' => 'Horse'})
-pettype4 = PetType.new ({'pet_type' => 'Spider'})
-pettype5 = PetType.new ({'pet_type' => 'Snake'})
-pettype6 = PetType.new ({'pet_type' => 'Mouse'})
-pettype7 = PetType.new ({'pet_type' => 'Other'})
+pettype1 = PetType.new ({'pet_type' => 'Cat', 'pet_image' => '/images/cat.jpg'})
+pettype2 = PetType.new ({'pet_type' => 'Dog', 'pet_image' => '/images/dog.jpg'})
+pettype3 = PetType.new ({'pet_type' => 'Horse', 'pet_image' => '/images/horse.jpg'})
+pettype4 = PetType.new ({'pet_type' => 'Spider', 'pet_image' => '/images/spider.jpg'})
+pettype5 = PetType.new ({'pet_type' => 'Snake', 'pet_image' => '/images/snake.jpg'})
+pettype6 = PetType.new ({'pet_type' => 'Mouse', 'pet_image' => '/images/mouse.jpg'})
+pettype7 = PetType.new ({'pet_type' => 'Fish', 'pet_image' => '/images/fish.jpg'})
+pettype8 = PetType.new ({'pet_type' => 'Other', 'pet_image' => '/images/other.jpg'})
 
 pettype1.save
 pettype2.save
@@ -24,6 +25,7 @@ pettype4.save
 pettype5.save
 pettype6.save
 pettype7.save
+pettype8.save
 
 
 pet1 = Pet.new({

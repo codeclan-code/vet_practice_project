@@ -1,6 +1,7 @@
 <ul>
   <li><%= @pet.pettype.pet_type %>, <%= @pet.name %> was registered with <%= @pet.vet.name %>  successfully!</li>
 </ul>
+<div class="image">
+  <img src="<%= @pet.pettype.pet_image %>"/>
+</div>
 <p><a href = "/pet/appointment">Schedule an appointment</a></p>
-
-<!-- Add image based on animal -->
