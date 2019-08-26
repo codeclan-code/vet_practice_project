@@ -4,6 +4,7 @@ require( 'pry' )
 require_relative( '../models/pet.rb' )
 require_relative( '../models/vet.rb' )
 require_relative( '../models/pettype.rb' )
+require_relative( '../models/owner.rb' )
 also_reload( '../models/*' )
 
 get '/pets' do # index

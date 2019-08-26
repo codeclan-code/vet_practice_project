@@ -1,6 +1,7 @@
 require_relative('../models/pet')
 require_relative('../models/vet')
 require_relative('../models/pettype')
+require_relative('../models/owner')
 require('pry')
 
 vet1 = Vet.new({'name' => 'Dr Monica Smith'})
@@ -28,14 +29,32 @@ pettype7.save
 pettype8.save
 
 
+owner1 = Owner.new(
+  {
+    'owner_name' => 'Kevin King',
+    'owner_mobile' => '123456789'
+  }
+)
+
+owner1.save
+
+owner2 = Owner.new(
+  {
+    'owner_name' => 'Carol Corn',
+    'owner_mobile' => '987654321'
+  }
+)
+
+owner2.save
+
+
 pet1 = Pet.new({
   'name' => 'Julius',
   'date_of_birth' => '12.12.19',
-  'owner_name' => 'Mr Clark',
-  'owner_mobile' => '0131 6648384',
   'treatment_notes' => 'Julius Treatment Notes',
   'vet_id' => vet1.id,
-  'pet_type_id' => pettype1.id
+  'pet_type_id' => pettype1.id,
+  'owner_id' => owner1.id
    })
 
 pet1.save
@@ -43,11 +62,10 @@ pet1.save
 pet2 = Pet.new({
   'name' => 'King',
   'date_of_birth' => '12.12.12',
-  'owner_name' => 'Miss Evermond',
-  'owner_mobile' => '0131 123456',
   'treatment_notes' => 'King Treatment Notes',
   'vet_id' => vet2.id,
-  'pet_type_id' => pettype2.id
+  'pet_type_id' => pettype2.id,
+  'owner_id' => owner2.id
    })
 
 pet2.save
