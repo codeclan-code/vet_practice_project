@@ -3,8 +3,7 @@
 <p>Pet Name: <%= @pet.name%></p>
 <p>Date of Birth: <%= @pet.date_of_birth%></p>
 <p>Type: <%= @pet.pettype.pet_type %></p>
-<p>Owner's Name: <%= @pet.owner_name %></p>
-<p>Owners Mobile: <%= @pet.owner_mobile %></p>
+<p>Owner's Name: <%= @pet.owner.owner_name %></p>
 <p>Vet: <%= @pet.vet.name %></p>
 <p>Treatment Notes:</p>
 <p><%= @pet.treatment_notes %> </p>

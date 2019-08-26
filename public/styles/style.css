@@ -9,13 +9,31 @@ body
 
 main
 {
-margin:20px;
+  margin:0px;
 
+}
+
+nav ul li {
+  font-size: 200%;
+  text-decoration: none;
+  list-style: square;
+  padding-bottom:10px;
+  margin-left:150px;
+  color:#B59A72;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  /* text-decoration: underline; */
+  color: #307BB3;
 }
 
 .form-wrapper
 {
-width: 175px;
+  width: 175px;
 }
 
 table {
@@ -36,4 +54,63 @@ label
 
 .inputWrapper label{
   display:block;
+}
+
+hr {
+  border: solid 1px #78C5FF;
+}
+
+
+i.fa-facebook-square {
+  background: #ffffff;
+  color: #3B5998;
+  font-size: 200%;
+}
+
+i.fa-twitter-square {
+  background: #ffffff;
+  color: #55ACEE;
+  font-size: 200%;
+}
+
+i.fa-linkedin {
+  background: #ffffff;
+  color: #007bb5;
+  font-size: 200%;
+}
+
+i.fa-youtube {
+  background: #ffffff;
+  color: #bb0000;
+  font-size: 200%;
+}
+
+i.fa-cat{
+  font-size: 1000%;
+  background: #ffffff;
+  color: #307BB3;
+  float:right;
+  margin-right:5px;
+}
+
+/* .fa {
+padding: 5px;
+font-size: 15px;
+width: 15px;
+text-align: center;
+text-decoration: none;
+margin: 5px 2px;
+border-radius: 50%;
+} */
+
+/* .fa:hover {
+opacity: 0.7;
+} */
+
+.banner {
+
+  background-color: #FFC978;
+  padding: 15px;
+  margin:0px;
+  border-bottom: solid 5px #78C5FF;
 }

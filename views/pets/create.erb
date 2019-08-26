@@ -1,5 +1,6 @@
 <ul>
   <li><%= @pet.pettype.pet_type %>, <%= @pet.name %> was registered with <%= @pet.vet.name %>  successfully!</li>
+<li>Owner: <%= @pet.owner.owner_name %></li>
 </ul>
 <div class="image">
   <img src="<%= @pet.pettype.pet_image %>" alt = "<%= @pet.pettype.pet_type %>"/>

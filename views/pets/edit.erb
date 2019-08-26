@@ -29,21 +29,16 @@
       <% end %>
     </select>
 
-    <label for="owner-name-field">Owner's Name:</label>
-    <input
-    type="text"
-    name="owner_name"
-    id="owner-name-field"
-    value="<%= @pet.owner_name %>"
-    />
-
-    <label for="owner-mobile-field">Owner's Mobile:</label>
-    <input
-    type="text"
-    name="owner_mobile"
-    id="owner-mobile-field"
-    value="<%= @pet.owner_mobile %>"
-    />
+    <label for="owner-selection">Select Owner:</label>
+    <select name="owner_id" id="owner-selection">
+      <% @owners.each do |owner| %>
+      <% if owner.id == @pet.owner_id %>
+      <option value=<%= owner.id %> selected><%= owner.owner_name %></option>
+      <% else %>
+      <option value=<%= owner.id %>><%= owner.owner_name %></option>
+      <% end %>
+      <% end %>
+    </select>
 
     <label for="vet-selection">Select Vet:</label>
     <select name="vet_id" id="vet-selection">

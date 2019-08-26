@@ -18,6 +18,7 @@ get '/pets/new' do # new
   @pet_types = PetType.all()
   @pets = Pet.all()
   @vets = Vet.all()
+  @owners = Owner.all()
   @title = "Register a New Pet"
   erb( :"pets/new" )
 end
@@ -39,6 +40,7 @@ end
 
 get '/pets/:id/edit' do
   @vets = Vet.all
+  @owners = Owner.all()
   @pettype = PetType.all
   @pet = Pet.find(params['id'])
   @title = "Edit Pet Details"
