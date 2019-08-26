@@ -6,12 +6,6 @@ require_relative( '../models/vet.rb' )
 # require_relative( '../models/pettype.rb' )
 also_reload( '../models/*' )
 
-#404 Error! - Not Found
-not_found do
-  @title = "Nothing to see here... move along please"
-  erb(:oops)
-end
-
 get '/vets' do # index
   @vets = Vet.all()
   @title = "List of Vets"
