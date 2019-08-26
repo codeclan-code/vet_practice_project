@@ -14,7 +14,8 @@ pettype2 = PetType.new ({'pet_type' => 'Dog'})
 pettype3 = PetType.new ({'pet_type' => 'Horse'})
 pettype4 = PetType.new ({'pet_type' => 'Spider'})
 pettype5 = PetType.new ({'pet_type' => 'Snake'})
-pettype6 = PetType.new ({'pet_type' => 'Other'})
+pettype6 = PetType.new ({'pet_type' => 'Mouse'})
+pettype7 = PetType.new ({'pet_type' => 'Other'})
 
 pettype1.save
 pettype2.save
@@ -22,6 +23,7 @@ pettype3.save
 pettype4.save
 pettype5.save
 pettype6.save
+pettype7.save
 
 
 pet1 = Pet.new({

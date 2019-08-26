@@ -20,8 +20,9 @@ end
 
 # GET NEW PET FORM
 get '/pets/new' do # new
-  @pet_type = PetType.all()
+  @pet_types = PetType.all()
   @pets = Pet.all()
+  @vets = Vet.all()
   @title = "Register a New Pet"
   erb( :"pets/new" )
 end

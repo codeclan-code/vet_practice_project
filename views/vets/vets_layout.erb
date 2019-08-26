@@ -18,10 +18,26 @@
       <div class="content-box">
         <section id="content">
           <h1>Vet Schedules</h1>
-          <ul>
+          <!-- <ul>
             <li><a href="/vets/pets/1">Dr Smith</a></li>
             <li><a href="/vets/pets/2">Dr Jones</a></li>
-          </ul>
+          </ul> -->
+          <!-- <label for="vet-selection">Select Vet:</label>
+          <select name="vet_id" id="vet-selection">
+            <% @vets.each do |vet| %>
+                <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
+            <% end %>
+          </select> -->
+
+           <!--REFACTOR ABOVE WITH ul/li -->
+
+           <ul>
+             <% @vets.each do |vet| %>
+               <li>
+                 <a href='/vets/pets/<%= vet.id %>'><%= vet.name.capitalize %></a>
+               </li>
+             <% end %>
+           </ul>
           <%= yield %>
         </section>
       </div>

@@ -15,14 +15,11 @@
   id="date-of-birth-field"
   />
 
-  <label for="pet-type-selection">Select Pet Type:</label>
-  <select name="pet_type_id" id="pet-type-selection" required>
-    <option value="1">Cat</option>
-    <option value="2">Dog</option>
-    <option value="3">Horse</option>
-    <option value="4">Spider</option>
-    <option value="5">Snake</option>
-    <option value="6">Other</option>
+  <label for="pet-type-selection">Select Pet:</label>
+  <select name="pet_type_id" id="pet-type-selection">
+    <% @pet_types.each do |pet_type| %>
+        <option value=<%= pet_type.id %>><%= pet_type.pet_type.capitalize %></option>
+    <% end %>
   </select>
 
 
@@ -40,20 +37,12 @@
   id="owner-mobile-field"
   />
 
-  <label for="vet-selection">Select Pet Type:</label>
-  <select name="vet_id" id="vet-selection" required>
-    <option value="1">Dr Smith</option>
-    <option value="1">Dr Jones</option>
-  </select>
-
-  <div class="form-el">
-    <label for="vet-selection">Select House:</label>
+    <label for="vet-selection">Select Vet:</label>
     <select name="vet_id" id="vet-selection">
       <% @vets.each do |vet| %>
           <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
       <% end %>
     </select>
-  </div>
 
   <label for="treatment-notes">Treatment Notes:</label>
   <textarea rows="10" cols="50" id="treatment-notes" name='treatment_notes'>
