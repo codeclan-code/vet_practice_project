@@ -49,6 +49,11 @@ class Pet
     return pet_type
   end
 
+  def owner()
+    owner = Owner.find(@owner_id)
+    return owner
+  end
+
   def update()
     sql = "UPDATE pets
     SET
