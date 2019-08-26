@@ -46,6 +46,15 @@
     <option value="1">Dr Jones</option>
   </select>
 
+  <div class="form-el">
+    <label for="vet-selection">Select House:</label>
+    <select name="vet_id" id="vet-selection">
+      <% @vets.each do |vet| %>
+          <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
+      <% end %>
+    </select>
+  </div>
+
   <label for="treatment-notes">Treatment Notes:</label>
   <textarea rows="10" cols="50" id="treatment-notes" name='treatment_notes'>
   </textarea>

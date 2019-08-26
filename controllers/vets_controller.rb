@@ -1,9 +1,9 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry' )
-require_relative( '../models/pet.rb' )
+# require_relative( '../models/pet.rb' )
 require_relative( '../models/vet.rb' )
-require_relative( '../models/pettype.rb' )
+# require_relative( '../models/pettype.rb' )
 also_reload( '../models/*' )
 
 #404 Error! - Not Found
@@ -33,12 +33,18 @@ post '/vets' do # create
   erb( :"vets/create" )
 end
 
-# GET PET BY ID TO EDIT
-get '/vets/:id' do
-  @vet = Vet.find(params['id'])
-  @title = "Vet Details"
-  erb(:"vets/show")
+get '/vets/admin' do # index
+  @vets = Vet.all()
+  @title = "List of Vets"
+  erb(:"vets/list")
 end
+
+get '/vets/schedule' do # index
+  @pets = Pet.all()
+  @title = "Vet's Schedule"
+  erb (:"vets/index"), :layout => (:"vets/vets_layout")
+end
+
 
 get '/vets/:id/edit' do
   @vet = Vet.find(params['id'])
@@ -46,13 +52,20 @@ get '/vets/:id/edit' do
   erb(:"vets/edit")
 end
 
-
 # update - POST FORM AFTER EDIT
 post '/vets/:id' do
   vet = Vet.new(params)
   vet.update
-  @title = "Update Vet Details"
-  redirect to "/vets/#{params['id']}"
+#   # @title = "Update Vet Details"
+#   # redirect to "/vets/#{params['id']}"
+erb(:"vets/updater")
+end
+
+# GET PET BY ID TO EDIT
+get '/vets/:id' do
+  @vet = Vet.find(params['id'])
+  @title = "Vet Details"
+  erb(:"vets/show")
 end
 
 # destroy - POST ID DELETE
@@ -65,20 +78,8 @@ end
 
 # EXTRAS
 
-get '/vets/schedule' do # index
-  @pets = Pet.all()
-  @title = "Vet's Schedule"
-  erb (:"vets/index"), :layout => (:"vets/vets_layout")
-end
-
 get '/vets/pets/:id' do # index
   @pets = Pet.vetspets(params['id'])
   @title = "Pet Vet Details"
   erb (:"vets/vet_list"), :layout => (:"vets/vets_layout")
-end
-
-get '/vets/admin' do # index
-  @vets = Vet.all()
-  @title = "List of Vets"
-  erb(:"vets/list")
 end
