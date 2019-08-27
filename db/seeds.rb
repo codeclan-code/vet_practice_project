@@ -18,7 +18,8 @@ pettype5 = PetType.new ({'pet_type' => 'Snake', 'pet_image' => '/images/snake.jp
 pettype6 = PetType.new ({'pet_type' => 'Mouse', 'pet_image' => '/images/mouse.jpg'})
 pettype7 = PetType.new ({'pet_type' => 'Fish', 'pet_image' => '/images/fish.jpg'})
 pettype8 = PetType.new ({'pet_type' => 'Bird', 'pet_image' => '/images/bird.jpg'})
-pettype9 = PetType.new ({'pet_type' => 'Other', 'pet_image' => '/images/other.jpg'})
+pettype9 = PetType.new ({'pet_type' => 'Insect', 'pet_image' => '/images/insect.jpg'})
+pettype10 = PetType.new ({'pet_type' => 'Other', 'pet_image' => '/images/other.jpg'})
 
 pettype1.save
 pettype2.save
@@ -29,12 +30,13 @@ pettype6.save
 pettype7.save
 pettype8.save
 pettype9.save
+pettype10.save
 
 
 owner1 = Owner.new(
   {
-    'owner_name' => 'Kevin King',
-    'owner_mobile' => '123456789'
+    'name' => 'Kevin King',
+    'mobile' => '123456789'
   }
 )
 
@@ -42,8 +44,8 @@ owner1.save
 
 owner2 = Owner.new(
   {
-    'owner_name' => 'Carol Corn',
-    'owner_mobile' => '987654321'
+    'name' => 'Carol Corn',
+    'mobile' => '987654321'
   }
 )
 

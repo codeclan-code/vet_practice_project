@@ -26,19 +26,19 @@ class Vet
     @id = id.to_i
   end
 
-  def update()
-    sql = "UPDATE vets
-    SET
-    (
-      name
-    ) =
-    (
-      $1
-    )
-    WHERE id = $2"
-    values = [@name, @id]
-    SqlRunner.run(sql, values)
-  end
+  # def update()
+  #   sql = "UPDATE vets
+  #   SET
+  #   (
+  #     name
+  #   ) =
+  #   (
+  #     $1
+  #   )
+  #   WHERE id = $2"
+  #   values = [@name, @id]
+  #   SqlRunner.run(sql, values)
+  # end
 
   def delete()
     sql = "DELETE FROM vets

@@ -33,9 +33,9 @@
     <select name="owner_id" id="owner-selection">
       <% @owners.each do |owner| %>
       <% if owner.id == @pet.owner_id %>
-      <option value=<%= owner.id %> selected><%= owner.owner_name %></option>
+      <option value=<%= owner.id %> selected><%= owner.name %></option>
       <% else %>
-      <option value=<%= owner.id %>><%= owner.owner_name %></option>
+      <option value=<%= owner.id %>><%= owner.name %></option>
       <% end %>
       <% end %>
     </select>

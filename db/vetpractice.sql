@@ -16,8 +16,8 @@ CREATE TABLE pettypes (
 
 CREATE TABLE owners (
   id SERIAL8 primary key,
-  owner_name VARCHAR(255),
-  owner_mobile VARCHAR(255)
+  name VARCHAR(255),
+  mobile VARCHAR(255)
 );
 
 CREATE TABLE pets (
