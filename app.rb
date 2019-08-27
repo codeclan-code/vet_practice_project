@@ -7,7 +7,7 @@ require_relative('controllers/owners_controller')
 #404 Error! - Not Found
 not_found do
   @title = "Nothing to see here... move along please"
-  erb :oops) :layout => (:"home_layout")
+  erb :oops, :layout => (:"home_layout")
 end
 
 get '/' do

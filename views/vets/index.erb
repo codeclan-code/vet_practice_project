@@ -1,1 +1,8 @@
 
+<ul>
+ <% @vets.each do |vet| %>
+   <li>
+     <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
+   </li>
+ <% end %>
+</ul>

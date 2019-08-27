@@ -38,7 +38,8 @@ get '/vets/schedule' do # index
   @vets = Vet.all()
   @pets = Pet.all()
   @title = "Vet's Schedule"
-  erb (:"vets/index"), :layout => (:"vets/vets_layout")
+  # erb (:"vets/index"), :layout => (:"vets/vets_layout")
+  erb (:"vets/index")
 end
 
 
@@ -78,5 +79,6 @@ get '/vets/pets/:id' do # index
   @pets = Pet.vetspets(params['id'])
   @vets = Vet.all()
   @title = "Pet Vet Details"
-  erb (:"vets/vet_list"), :layout => (:"vets/vets_layout")
+  # erb (:"vets/vet_list"), :layout => (:"vets/vets_layout")
+  erb (:"vets/vet_list")
 end
