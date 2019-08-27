@@ -1,7 +1,7 @@
 body
 {
   background-color: #fff;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   padding:5px;
   margin: 5px;
   border: 1px solid darkred;
@@ -10,11 +10,9 @@ body
 main
 {
   margin:0px;
-
 }
 
 nav {
-
   padding: 2px;
   margin: 2px;
 }
@@ -24,7 +22,6 @@ nav ul li {
   text-decoration: none;
   list-style: square;
   padding-bottom:10px;
-  margin-left:150px;
   color:#B59A72;
 }
 
@@ -33,56 +30,26 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  /* text-decoration: underline; */
   color: #307BB3;
 }
 
 nav.subnav ul {
   /* border: 1px solid gray; */
-  width: 75%;
   align-items: center;
   text-align: center;
 }
 
-nav.subnav ul li{
-
-font-size: 100%;
+nav.subnav ul li {
+  font-size: 100%;
   display:inline;
   padding: 2px;
   margin: 2px;
   border: 1px solid gray;
-  /* background-color: #B59A72; */
-}
-
-.form-wrapper
-{
-  width: 175px;
-}
-
-table {
-  border: 1px solid gray;
-  width: 400px;
-}
-
-td
-{
-  border: 1px solid gray;
-  width: 200px;
-}
-
-label
-{
-  font-weight:bold;;
-}
-
-.inputWrapper label{
-  display:block;
 }
 
 hr {
   border: solid 1px #78C5FF;
 }
-
 
 i.fa-facebook-square {
   background: #ffffff;
@@ -109,47 +76,37 @@ i.fa-youtube {
 }
 
 i.fa-cat{
-  font-size: 1000%;
+  font-size: 750%;
   background: #ffffff;
   color: #307BB3;
   float:right;
   margin-right:5px;
+  margin-bottom: 10px;
 }
 
-/* .fa {
-padding: 5px;
-font-size: 15px;
-width: 15px;
-text-align: center;
-text-decoration: none;
-margin: 5px 2px;
-border-radius: 50%;
-} */
-
-/* .fa:hover {
-opacity: 0.7;
-} */
-
 .banner {
-
   background-color: #FFC978;
   padding: 1px;
   margin:0px;
   border-bottom: solid 5px #78C5FF;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 150%;
   text-align: center;
   margin-bottom:20px;
 }
 
 .sub-banner {
-
   background-color: #FFC978;
   padding: 1px;
   margin:0px;
   border-bottom: solid 5px #78C5FF;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 75%;
   text-align: center;
   /* margin-bottom:20px; */
+}
+
+footer small {
+  font-family: 'Lato', sans-serif;
+  font-size: 75%;
 }

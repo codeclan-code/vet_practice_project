@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <title><%= @title %></title>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
-  <link rel="icon" href="/images/xxx.png" /> -->
-  <!-- Add icon font -->
-<link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/images/icon.png" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
     <div class="grid">
-      <h2>Acorn Vet/Pet Management Application</h2>
+      <h2>Blue Cat Vet/Pet Management Application</h2>
       <div class="nav-box">
         <%= erb(:"nav/top_nav") %>
       </div>
@@ -19,30 +21,30 @@
         <section id="content">
           <h1>Vet's Schedule</h1>
           <!-- <ul>
-            <li><a href="/vets/pets/1">Dr Smith</a></li>
-            <li><a href="/vets/pets/2">Dr Jones</a></li>
-          </ul> -->
-          <!-- <label for="vet-selection">Select Vet:</label>
-          <select name="vet_id" id="vet-selection">
-            <% @vets.each do |vet| %>
-                <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
-            <% end %>
-          </select> -->
+          <li><a href="/vets/pets/1">Dr Smith</a></li>
+          <li><a href="/vets/pets/2">Dr Jones</a></li>
+        </ul> -->
+        <!-- <label for="vet-selection">Select Vet:</label>
+        <select name="vet_id" id="vet-selection">
+        <% @vets.each do |vet| %>
+        <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
+        <% end %>
+      </select> -->
 
-           <!--REFACTOR ABOVE WITH ul/li -->
+      <!--REFACTOR ABOVE WITH ul/li -->
 
-           <ul>
-             <% @vets.each do |vet| %>
-               <li>
-                 <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
-               </li>
-             <% end %>
-           </ul>
-          <%= yield %>
-        </section>
-      </div>
-    </div>
-  </main>
-  <%= erb(:"nav/footer") %>
+      <ul>
+        <% @vets.each do |vet| %>
+        <li>
+          <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
+        </li>
+        <% end %>
+      </ul>
+      <%= yield %>
+    </section>
+  </div>
+</div>
+</main>
+<%= erb(:"nav/footer") %>
 </body>
 </html>

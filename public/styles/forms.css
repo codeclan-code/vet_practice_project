@@ -1,0 +1,80 @@
+.form-wrapper {
+  margin-left: 20%;
+      margin-right: auto;
+}
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+}
+
+input, textarea, select, button {
+  width : 250px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+textarea {
+  height: 100px;
+}
+
+select {
+  /* width: 80px; */
+  padding: 10px;
+}
+
+option {
+  padding: 5px;
+  color: xred;
+}
+
+label {
+    float: left;
+    width: 150px;
+    padding-right: 0px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.input_wrapper {
+  display:block;
+  margin-bottom:10px;
+}
+
+input[type=submit] {
+  width: 25%;
+  background-color: #FFA500;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom:10px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* input {
+    float: left;
+    width: calc(100% - 200px);
+    margin-bottom: 10px;
+} */
+
+/* button {
+    float: right;
+    width: calc(100% - 200px);
+} */
+
+/* .form-wrapper
+{
+width:100%
+}
+
+label
+{
+  font-weight:bold;;
+} */

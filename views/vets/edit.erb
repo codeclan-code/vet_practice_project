@@ -3,14 +3,20 @@
 
 <div class="form-wrapper">
   <form method="post" action="/vets/<%= @vet.id %>">
-    <label for="vet-name-field">Vet Name:</label>
-    <input
-    type="text"
-    name="name"
-    id="vet-name-field"
-    value="<%= @vet.name %>"
-    />
 
-  <input type="submit" value="Update Vet">
-</form>
+    <div class="input_wrapper">
+      <label for="vet-name-field">Vet Name:</label>
+      <input
+      type="text"
+      name="name"
+      id="vet-name-field"
+      value="<%= @vet.name %>"
+      />
+    </div>
+
+    <div class="input_wrapper">
+      <input type="submit" value="Update Vet">
+    </div>
+
+  </form>
 </div>

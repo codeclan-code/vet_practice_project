@@ -11,6 +11,6 @@ not_found do
 end
 
 get '/' do
-  @title = "Acorn Vet Practice"
+  @title = "Blue Cat Vet Practice"
     erb :index, :layout => (:"home_layout")
 end

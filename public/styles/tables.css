@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+tr:hover {background-color: #ddd;}
+
+td a {
+  text-decoration: none;
+  font-weight: bold;
+}
