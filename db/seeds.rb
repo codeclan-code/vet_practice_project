@@ -17,7 +17,8 @@ pettype4 = PetType.new ({'pet_type' => 'Spider', 'pet_image' => '/images/spider.
 pettype5 = PetType.new ({'pet_type' => 'Snake', 'pet_image' => '/images/snake.jpg'})
 pettype6 = PetType.new ({'pet_type' => 'Mouse', 'pet_image' => '/images/mouse.jpg'})
 pettype7 = PetType.new ({'pet_type' => 'Fish', 'pet_image' => '/images/fish.jpg'})
-pettype8 = PetType.new ({'pet_type' => 'Other', 'pet_image' => '/images/other.jpg'})
+pettype8 = PetType.new ({'pet_type' => 'Bird', 'pet_image' => '/images/bird.jpg'})
+pettype9 = PetType.new ({'pet_type' => 'Other', 'pet_image' => '/images/other.jpg'})
 
 pettype1.save
 pettype2.save
@@ -27,6 +28,7 @@ pettype5.save
 pettype6.save
 pettype7.save
 pettype8.save
+pettype9.save
 
 
 owner1 = Owner.new(
