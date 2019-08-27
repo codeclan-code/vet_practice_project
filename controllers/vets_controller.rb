@@ -49,20 +49,20 @@ get '/vets/:id/edit' do
   erb(:"vets/edit")
 end
 
-# update - POST FORM AFTER EDIT
-post '/vets/:id' do
-  vet = Vet.new(params)
-  vet.update
-#   # @title = "Update Vet Details"
-#   # redirect to "/vets/#{params['id']}"
-erb(:"vets/updater")
-end
-
 # GET PET BY ID TO EDIT
 get '/vets/:id' do
   @vet = Vet.find(params['id'])
   @title = "Vet Details"
   erb(:"vets/show")
+end
+
+# update - POST FORM AFTER EDIT
+post '/vets/:id' do
+  vet = Vet.new(params)
+  vet.update
+  # @title = "Update Pet Details"
+  redirect to "/vets/#{params['id']}"
+  # redirect to confrmation page
 end
 
 # destroy - POST ID DELETE

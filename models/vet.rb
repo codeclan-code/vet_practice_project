@@ -2,43 +2,46 @@ require_relative('../db/sql_runner')
 
 class Vet
 
-  attr_accessor :name
+  attr_accessor :name, :mobile
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @mobile = options['mobile']
   end
 
   def save()
     sql = "INSERT INTO vets
     (
-      name
+      name,
+      mobile
     )
     VALUES
     (
-      $1
+      $1, $2
     )
     RETURNING id"
-    values = [@name]
+    values = [@name, @mobile]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i
   end
 
-  # def update()
-  #   sql = "UPDATE vets
-  #   SET
-  #   (
-  #     name
-  #   ) =
-  #   (
-  #     $1
-  #   )
-  #   WHERE id = $2"
-  #   values = [@name, @id]
-  #   SqlRunner.run(sql, values)
-  # end
+  def update()
+    sql = "UPDATE vets
+    SET
+    (
+      name,
+      mobile
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @mobile, @id]
+    SqlRunner.run(sql, values)
+  end
 
   def delete()
     sql = "DELETE FROM vets
@@ -55,6 +58,11 @@ class Vet
     vet = Vet.new(result)
     return vet
   end
+
+  # def owner()
+  #   owner = Owner.find(@id)
+  #   return owner
+  # end
 
   def self.all()
     sql = "SELECT * FROM vets"

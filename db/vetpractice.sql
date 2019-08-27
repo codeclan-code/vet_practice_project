@@ -5,7 +5,8 @@ DROP TABLE owners;
 
 CREATE TABLE vets (
   id SERIAL8 primary key,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  mobile VARCHAR(255)
 );
 
 CREATE TABLE pettypes (

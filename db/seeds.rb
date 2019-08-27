@@ -4,10 +4,10 @@ require_relative('../models/pettype')
 require_relative('../models/owner')
 require('pry')
 
-vet1 = Vet.new({'name' => 'Dr Monica Smith'})
+vet1 = Vet.new({'name' => 'Dr Monica Smith', 'mobile' => '99999999'})
 vet1.save
 
-vet2 = Vet.new({'name' => 'Dr Heather Jones'})
+vet2 = Vet.new({'name' => 'Dr Heather Jones', 'mobile' => '66666666'})
 vet2.save
 
 pettype1 = PetType.new ({'pet_type' => 'Cat', 'pet_image' => '/images/cat.jpg'})
