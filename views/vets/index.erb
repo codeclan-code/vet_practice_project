@@ -1,8 +1,20 @@
 
-<ul>
+<!-- <ul>
  <% @vets.each do |vet| %>
    <li>
      <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
    </li>
  <% end %>
-</ul>
+</ul> -->
+
+<table>
+  <tr>
+    <th>Vet</th>
+  </tr>
+  <% @vets.each do |vet| %>
+  <tr>
+    <td><a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a></td>
+  </tr>
+<% end %>
+
+  </table>

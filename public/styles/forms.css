@@ -57,24 +57,3 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
-
-/* input {
-    float: left;
-    width: calc(100% - 200px);
-    margin-bottom: 10px;
-} */
-
-/* button {
-    float: right;
-    width: calc(100% - 200px);
-} */
-
-/* .form-wrapper
-{
-width:100%
-}
-
-label
-{
-  font-weight:bold;;
-} */

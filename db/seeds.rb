@@ -4,11 +4,14 @@ require_relative('../models/pettype')
 require_relative('../models/owner')
 require('pry')
 
-vet1 = Vet.new({'name' => 'Dr Monica Smith', 'mobile' => '99999999'})
+vet1 = Vet.new({'name' => 'Dr Monica Smith', 'mobile' => '0978 1234 999'})
 vet1.save
 
-vet2 = Vet.new({'name' => 'Dr Heather Jones', 'mobile' => '66666666'})
+vet2 = Vet.new({'name' => 'Dr Heather Jones', 'mobile' => '0978 6565 123'})
 vet2.save
+
+vet3 = Vet.new({'name' => 'Dr Jason Bourne', 'mobile' => '0800 1234 456'})
+vet3.save
 
 pettype1 = PetType.new ({'pet_type' => 'Cat', 'pet_image' => '/images/cat.jpg'})
 pettype2 = PetType.new ({'pet_type' => 'Dog', 'pet_image' => '/images/dog.jpg'})
@@ -36,7 +39,7 @@ pettype10.save
 owner1 = Owner.new(
   {
     'name' => 'Kevin King',
-    'mobile' => '123456789'
+    'mobile' => '0123 456 789'
   }
 )
 
@@ -45,17 +48,54 @@ owner1.save
 owner2 = Owner.new(
   {
     'name' => 'Carol Corn',
-    'mobile' => '987654321'
+    'mobile' => '0987 654 321'
   }
 )
 
 owner2.save
 
+owner3 = Owner.new(
+  {
+    'name' => 'James Gardener',
+    'mobile' => '0131 675 1212'
+  }
+)
+
+owner3.save
+
+
+owner4 = Owner.new(
+  {
+    'name' => 'Hilary Clinton',
+    'mobile' => '0120 765 1234'
+  }
+)
+
+owner4.save
+
+owner5 = Owner.new(
+  {
+    'name' => 'Margaret Sharp',
+    'mobile' => '0130 445 1334'
+  }
+)
+
+owner5.save
+
+owner6 = Owner.new(
+  {
+    'name' => 'Nicola Sturgeon',
+    'mobile' => '0160 111 1555'
+  }
+)
+
+owner6.save
+
 
 pet1 = Pet.new({
   'name' => 'Julius',
   'date_of_birth' => '12.12.19',
-  'treatment_notes' => 'Julius Treatment Notes',
+  'treatment_notes' => 'J\'s Treatment Notes',
   'vet_id' => vet1.id,
   'pet_type_id' => pettype1.id,
   'owner_id' => owner1.id
@@ -66,13 +106,57 @@ pet1.save
 pet2 = Pet.new({
   'name' => 'King',
   'date_of_birth' => '12.12.12',
-  'treatment_notes' => 'King Treatment Notes',
+  'treatment_notes' => 'Treatment Notes',
   'vet_id' => vet2.id,
   'pet_type_id' => pettype2.id,
   'owner_id' => owner2.id
    })
 
 pet2.save
+
+pet3 = Pet.new({
+  'name' => 'Wee Jessie',
+  'date_of_birth' => '06.09.17',
+  'treatment_notes' => 'Jessie\'s Treatment Notes',
+  'vet_id' => vet2.id,
+  'pet_type_id' => pettype2.id,
+  'owner_id' => owner2.id
+   })
+
+pet3.save
+
+pet4 = Pet.new({
+  'name' => 'Pigpen',
+  'date_of_birth' => '12.12.12',
+  'treatment_notes' => 'Pigpen\'s Treatment Notes',
+  'vet_id' => vet3.id,
+  'pet_type_id' => pettype5.id,
+  'owner_id' => owner3.id
+   })
+
+pet4.save
+
+pet5 = Pet.new({
+  'name' => 'Pete',
+  'date_of_birth' => '12.12.14',
+  'treatment_notes' => 'Pete\'s Treatment Notes',
+  'vet_id' => vet3.id,
+  'pet_type_id' => pettype5.id,
+  'owner_id' => owner4.id
+   })
+
+pet5.save
+
+pet6 = Pet.new({
+  'name' => 'Pete',
+  'date_of_birth' => '12.12.14',
+  'treatment_notes' => 'Pete\'s Treatment Notes',
+  'vet_id' => vet3.id,
+  'pet_type_id' => pettype7.id,
+  'owner_id' => owner5.id
+   })
+
+pet6.save
 
 
 

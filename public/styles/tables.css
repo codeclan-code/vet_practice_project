@@ -6,12 +6,12 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: #307BB3;
   color: white;
 }
 
 td, th {
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 6px;
 }
 

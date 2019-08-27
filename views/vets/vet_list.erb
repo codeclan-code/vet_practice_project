@@ -1,18 +1,29 @@
+<table>
+  <tr>
+    <th>Vet</th>
+  </tr>
+  <% @vets.each do |vet| %>
+  <tr>
+    <td><a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a></td>
+  </tr>
+<% end %>
 
-<ul>
- <% @vets.each do |vet| %>
-   <li>
-     <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
-   </li>
- <% end %>
-</ul>
+  </table>
 
-<% @pets.each do |pet| %>
+  <hr />
+
+
   <table>
     <tr>
-      <td><a href = "/pets/<%= pet.id%>" ><%= pet.name%> </a></td>
+      <th>Pet Name</th>
+      <th>Pet Type</th>
+      <th>Assigned Vet</th>
+    </tr>
+    <% @pets.each do |pet| %>
+    <tr>
+      <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.name%> </a></td>
     <td><%= pet.pettype.pet_type%></td>
       <td><%= pet.vet.name%></td>
     </tr>
+    <% end %>
   </table>
-<% end %>
