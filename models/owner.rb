@@ -2,27 +2,29 @@ require_relative('../db/sql_runner')
 
 class Owner
 
-  attr_accessor :name, :mobile
+  attr_accessor :name, :mobile, :email
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @mobile = options['mobile']
+    @email = options['email']
   end
 
   def save()
     sql = "INSERT INTO owners
     (
       name,
-      mobile
+      mobile,
+      email
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@name, @mobile]
+    values = [@name, @mobile, @email]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i
@@ -33,13 +35,14 @@ class Owner
     SET
     (
       name,
-      mobile
+      mobile,
+      email
     ) =
     (
-      $1, $2
+      $1, $2, $3
     )
-    WHERE id = $3"
-    values = [@name, @mobile, @id]
+    WHERE id = $4"
+    values = [@name, @mobile, @email, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -73,6 +76,14 @@ class Owner
 
   def self.map_items(owner_data)
     return owner_data.map { |owner| Owner.new(owner) }
+  end
+
+  def self.ownerspets(owner_id)
+    sql = "SELECT * FROM pets WHERE owner_id = $1"
+    values  = [owner_id]
+    pet_data = SqlRunner.run(sql, values)
+    pets = map_items(pet_data)
+    return pets
   end
 
 end

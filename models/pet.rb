@@ -106,4 +106,12 @@ class Pet
     return pets
   end
 
+  def self.ownerspets(owner_id)
+    sql = "SELECT * FROM pets WHERE owner_id = $1"
+    values  = [owner_id]
+    pet_data = SqlRunner.run(sql, values)
+    pets = map_items(pet_data)
+    return pets
+  end
+
 end

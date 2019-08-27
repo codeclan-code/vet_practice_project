@@ -1,5 +1,22 @@
 <table>
   <tr>
+    <th>Owner Details and Pets</th>
+    <th>Mobile</th>
+    <th>Email</th>
+  </tr>
+  <% @owners.each do |owner| %>
+  <tr>
+    <td><a href='/owners/pets/<%= owner.id %>'><%= owner.name %></a></td>
+    <td><%= owner.mobile %></td>
+    <td><%= owner.email %></td>
+  </tr>
+  <% end %>
+</table>
+
+<hr />
+
+<table>
+  <tr>
     <th>Pet Name</th>
     <th>Pet Type</th>
     <th>Assigned Vet</th>

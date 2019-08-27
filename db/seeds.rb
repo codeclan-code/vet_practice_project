@@ -39,7 +39,8 @@ pettype10.save
 owner1 = Owner.new(
   {
     'name' => 'Kevin King',
-    'mobile' => '0123 456 789'
+    'mobile' => '0123 456 789',
+    'email' => 'xxx@xxx.co.uk'
   }
 )
 
@@ -48,7 +49,8 @@ owner1.save
 owner2 = Owner.new(
   {
     'name' => 'Carol Corn',
-    'mobile' => '0987 654 321'
+    'mobile' => '0987 654 321',
+    'email' => 'xxx@xxx.co.uk'
   }
 )
 
@@ -57,7 +59,8 @@ owner2.save
 owner3 = Owner.new(
   {
     'name' => 'James Gardener',
-    'mobile' => '0131 675 1212'
+    'mobile' => '0131 675 1212',
+    'email' => 'xxx@xxx.co.uk'
   }
 )
 
@@ -67,7 +70,8 @@ owner3.save
 owner4 = Owner.new(
   {
     'name' => 'Hilary Clinton',
-    'mobile' => '0120 765 1234'
+    'mobile' => '0120 765 1234',
+    'email' => 'xxx@xxx.co.uk'
   }
 )
 
@@ -76,7 +80,8 @@ owner4.save
 owner5 = Owner.new(
   {
     'name' => 'Margaret Sharp',
-    'mobile' => '0130 445 1334'
+    'mobile' => '0130 445 1334',
+    'email' => 'xxx@xxx.co.uk'
   }
 )
 
@@ -85,7 +90,8 @@ owner5.save
 owner6 = Owner.new(
   {
     'name' => 'Nicola Sturgeon',
-    'mobile' => '0160 111 1555'
+    'mobile' => '0160 111 1555',
+    'email' => 'xxx@xxx.co.uk'
   }
 )
 
@@ -148,7 +154,7 @@ pet5 = Pet.new({
 pet5.save
 
 pet6 = Pet.new({
-  'name' => 'Pete',
+  'name' => 'Kandy',
   'date_of_birth' => '12.12.14',
   'treatment_notes' => 'Pete\'s Treatment Notes',
   'vet_id' => vet3.id,

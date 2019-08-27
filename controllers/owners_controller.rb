@@ -30,6 +30,15 @@ post '/owners' do # create
   @title = "#{@owner.name} has been Registered"
   erb( :"owners/create" )
 end
+
+get '/owners/schedule' do # index
+  @vets = Vet.all()
+  @pets = Pet.all()
+  @owners = Owner.all()
+  @title = "Owner's Schedule"
+  # erb (:"vets/index"), :layout => (:"vets/vets_layout")
+  erb (:"owners/index")
+end
 #
 # # GET PET BY ID TO EDIT
 get '/owners/:id' do
@@ -65,4 +74,14 @@ post '/owners/:id/delete' do
   owner.delete
   @title = "Delete Owner Details"
   redirect to '/owners'
+end
+
+# EXTRAS
+
+get '/owners/pets/:id' do # index
+  @pets = Pet.ownerspets(params['id'])
+  @owners = Owner.all()
+  @vets = Vet.all()
+  @title = "Owners' Pets Details"
+  erb (:"owners/owner_list")
 end
