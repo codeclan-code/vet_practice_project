@@ -84,6 +84,34 @@ i.fa-cat{
   margin-bottom: 10px;
 }
 
+.fa-user-edit{
+  /* font-size: 750%; */
+  background: transparent;
+  color: red;
+}
+i::before{
+    background:transparent;
+}
+
+a:hover .fa-user-edit {
+    background:transparent;
+}
+
+a button {
+  background-color:orange;
+  border:0px orange;
+  color: #ffffff;
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+  cursor:pointer;
+}
+
+a:hover button {
+  background-color: green;
+  cursor:pointer;
+}
+
 .banner {
   background-color: #FFC978;
   padding: 1px;
