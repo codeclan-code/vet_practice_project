@@ -24,7 +24,7 @@
       <div class="input_wrapper">
         <label for="pet-type-selection"  style="visibility: hidden;">>Select Pet:</label>
       <select name="pet_type_id" id="pet-type-selection" required>
-        <option value ="" selected>Select Pet Type</option>
+        <option value = "" selected>Select Pet Type</option>
         <% @pet_types.each do |pet_type| %>
         <option value=<%= pet_type.id %>><%= pet_type.pet_type.capitalize %></option>
         <% end %>
@@ -34,7 +34,7 @@
       <div class="input_wrapper">
         <label for="vet-selection" style="visibility: hidden;">Select Vet:</label>
       <select name="vet_id" id="vet-selection" required>
-        <option value ="" selected>Select Vet</option>
+        <option value = "" selected>Select Vet</option>
         <% @vets.each do |vet| %>
         <option value=<%= vet.id %>><%= vet.name %></option>
         <% end %>

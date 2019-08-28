@@ -1,11 +1,18 @@
 <h3>Edit Vet Details</h3>
-<% @vets.each do |vet| %>
+
   <table>
     <tr>
-      <td><a href = "/vets/<%= vet.id%>" ><%= vet.name%> </a></td>
+      <th>Vet Name</th>
+      <th>Edit</th>
     </tr>
+    <% @vets.each do |vet| %>
+    <tr>
+      <td><a href = "/vets/<%= vet.id%>/edit" ><%= vet.name%> </a></td>
+      <td><a href = "/vets/<%= vet.id%>/edit" ><i class="fas fa-user-edit"></i><a></td>
+    </tr>
+    <% end %>
   </table>
-<% end %>
+
 
 <hr />
 <h3>Add Vet Details</h3>
@@ -16,6 +23,13 @@
   type="text"
   name="name"
   id="vet-name-field"
+  />
+
+  <label for="vet-mobile-field">Vet Mobile:</label>
+  <input required
+  type="text"
+  name="mobile"
+  id="vet-mobile-field"
   />
   <input type="submit" value="Add a Vet">
 </form>

@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <div class = "owner_details">
 
   <p><strong>Owner Name:</strong> <%= @owner.name %></p>
@@ -9,7 +9,6 @@
 
 </div> -->
 
-<div class="xform-wrapper">
 <table>
   <tr>
     <td><strong>Owner Name:</strong></td><td><%= @owner.name%></td>
@@ -22,7 +21,9 @@
   </tr>
 </table>
 
-
-<p><a href="/owners/<%= @owner.id %>/edit"><button type="button">Edit</button></a></p>
-
-<p><form action="/owners/<%= @owner.id %>/delete" method="POST"><input type="submit" value="Delete"></form></p>
+<table class="button-bar">
+<tr>
+  <td><a href="/owners/<%= @owner.id %>/edit"><button type="button">Edit</button></a></td>
+  <td><form action="/owners/<%= @owner.id %>/delete" method="POST"><input type="submit" value="Delete"  style = "width:100px;"></form></td>
+</tr>
+</table>

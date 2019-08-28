@@ -4,13 +4,15 @@
     <th>Mobile</th>
     <th>Email</th>
     <th>Edit</th>
+    <th>Delete</th>
   </tr>
   <% @owners.each do |owner| %>
   <tr>
     <td><a href='/owners/pets/<%= owner.id %>'><%= owner.name %></a></td>
     <td><a href='/owners/pets/<%= owner.id %>'><%= owner.mobile %></a></td>
     <td><a href='/owners/pets/<%= owner.id %>'><%= owner.email %></a></td>
-    <td><a href='/owners/<%= owner.id %>'><i class="fas fa-user-edit"></i><a></td>
+    <td><a href='/owners/<%= owner.id %>/edit'><i class="fas fa-user-edit"></i><a></td>
+    <td><a href='/owners/<%= owner.id %>'><i class="fas fa-user-minus"></i><a></td>
   </tr>
   <% end %>
 </table>
