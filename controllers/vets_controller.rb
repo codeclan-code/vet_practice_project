@@ -42,6 +42,13 @@ get '/vets/schedule' do # index
   erb (:"vets/index")
 end
 
+get '/vets/warning' do # index
+  # @vet = Vet.find(params['id'])
+  # @vets = Vet.all()
+  @title = "List of Vets"
+  erb(:"vets/warning")
+end
+
 
 get '/vets/:id/edit' do
   @vet = Vet.find(params['id'])

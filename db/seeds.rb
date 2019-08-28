@@ -40,7 +40,7 @@ owner1 = Owner.new(
   {
     'name' => 'Kevin King',
     'mobile' => '0123 456 789',
-    'email' => 'xxx@xxx.co.uk'
+    'email' => 'kkk@whitedog.co.uk'
   }
 )
 
@@ -50,7 +50,7 @@ owner2 = Owner.new(
   {
     'name' => 'Carol Corn',
     'mobile' => '0987 654 321',
-    'email' => 'xxx@xxx.co.uk'
+    'email' => 'linda@mccartney.co.uk'
   }
 )
 
@@ -58,9 +58,9 @@ owner2.save
 
 owner3 = Owner.new(
   {
-    'name' => 'James Gardener',
+    'name' => 'James Garner',
     'mobile' => '0131 675 1212',
-    'email' => 'xxx@xxx.co.uk'
+    'email' => 'jg@westerns.co.uk'
   }
 )
 
@@ -71,7 +71,7 @@ owner4 = Owner.new(
   {
     'name' => 'Hilary Clinton',
     'mobile' => '0120 765 1234',
-    'email' => 'xxx@xxx.co.uk'
+    'email' => 'dodgy@email.com'
   }
 )
 
@@ -81,7 +81,7 @@ owner5 = Owner.new(
   {
     'name' => 'Margaret Sharp',
     'mobile' => '0130 445 1334',
-    'email' => 'xxx@xxx.co.uk'
+    'email' => 'margaret@yahoo.co.uk'
   }
 )
 
@@ -91,7 +91,7 @@ owner6 = Owner.new(
   {
     'name' => 'Nicola Sturgeon',
     'mobile' => '0160 111 1555',
-    'email' => 'xxx@xxx.co.uk'
+    'email' => 'nicola4@indyref.scot'
   }
 )
 

@@ -1,6 +1,11 @@
 <h2><%= @vet.name %></h2>
 
-<p>Vet: <%= @vet.name %></p>
-<a href="/vets/<%= @vet.id %>/edit"><button type="button">Edit</button></a>
+<p><strong>Vet:</strong> <%= @vet.name %></p>
 
-<form action="/vets/<%= @vet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<p><strong>Mobile:</strong> <%= @vet.mobile %></p>
+
+<p><a href="/vets/<%= @vet.id %>/edit"><button type="button">Edit</button></a></p>
+
+<p><a href="/vets/warning"><button type="button">Delete</button></a></p>
+
+<!-- <form action="/vets/<%= @vet.id %>/delete" method="POST"><input type="submit" value="Delete"></form> -->
