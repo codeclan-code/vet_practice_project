@@ -5,8 +5,8 @@ class TestPet < MiniTest::Test
 
   def setup
     options = {"name" => "Pixie", "date_of_birth" => "12.12.12",
-      "pet_type_id" => 1, "owner_name" => "Mr Thomas", "vet_id" => 2,
-      "owner_mobile" => "1234567890", "treatment_notes" => "Pixie: Treatment Notes"}
+      "pet_type_id" => "1", "owner_id" => "3", "vet_id" => "2",
+       "treatment_notes" => "Pixie: Treatment Notes"}
 
       @pet = Pet.new(options)
     end
@@ -36,27 +36,9 @@ class TestPet < MiniTest::Test
       assert_equal('Pixie: Treatment Notes', result)
     end
 
-    def test_owner_name()
-      result = @pet.owner_name()
-      assert_equal("Mr Thomas", result)
+    def test_owner_id()
+      result = @pet.owner_id()
+      assert_equal(3, result)
     end
 
-    def test_owner_mobile()
-      result = @pet.owner_mobile()
-      assert_equal("1234567890", result)
-    end
-
-    # TO do OR not?
-
-    # def vet()
-    #   vet = Vet.find(@vet_id)
-    #   return vet
-    # end
-    #
-    # def pettype()
-    #   pet_type = PetType.find(@pet_type_id)
-    #   return pet_type
-    # end
-
-    # TO do OR not?
-    end
+  end
