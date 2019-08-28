@@ -84,17 +84,27 @@ i.fa-cat{
   margin-bottom: 10px;
 }
 
-.fa-user-edit{
+.fa-user-minus{
   /* font-size: 750%; */
   background: transparent;
   color: red;
 }
+
+.fa-user-edit{
+  /* font-size: 750%; */
+  background: transparent;
+  color: green;
+}
 i::before{
-    background:transparent;
+  background:transparent;
+}
+
+a:hover .fa-user-minus{
+  background: transparent;
 }
 
 a:hover .fa-user-edit {
-    background:transparent;
+  background:transparent;
 }
 
 a button {
@@ -137,4 +147,9 @@ a:hover button {
 footer small {
   font-family: 'Lato', sans-serif;
   font-size: 75%;
+}
+
+div.owner_details {
+  margin-left: 20%;
+  margin-right: auto;
 }

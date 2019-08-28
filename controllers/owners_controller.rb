@@ -73,7 +73,7 @@ post '/owners/:id/delete' do
   owner = Owner.find(params['id'])
   owner.delete
   @title = "Delete Owner Details"
-  redirect to '/owners'
+  redirect to '/owners/schedule'
 end
 
 # EXTRAS

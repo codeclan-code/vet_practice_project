@@ -1,8 +1,8 @@
 <table>
   <tr>
-    <th>Pet Owner</th>
+    <th style = "background-color:red;">Pet Owner</th>
     <th>Mobile</th>
-    <th>Emailx</th>
+    <th>Email</th>
     <th>Edit</th>
   </tr>
   <% @owners.each do |owner| %>
@@ -19,10 +19,11 @@
 
 <table>
   <tr>
-    <th>Pet Name</th>
+    <th style = "background-color:green;">Pet Name</th>
     <th>Pet Type</th>
     <th>Assigned Vet</th>
     <th>Owner</th>
+    <th>Edit</th>
   </tr>
   <% @pets.each do |pet| %>
   <tr>
@@ -30,6 +31,7 @@
     <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.pettype.pet_type%> </a></td>
     <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.vet.name%> </a></td>
     <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.owner.name%> </a></td>
+   <td><a href = "/pets/<%= pet.id%>/edit" ><i class="fas fa-user-edit"></i><a></td>
   </tr>
   <% end %>
 </table>
