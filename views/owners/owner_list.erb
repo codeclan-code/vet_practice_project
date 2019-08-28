@@ -1,14 +1,14 @@
 <table>
   <tr>
-    <th>Owner Details and Pets</th>
+    <th>Pet Owner</th>
     <th>Mobile</th>
     <th>Email</th>
   </tr>
   <% @owners.each do |owner| %>
   <tr>
     <td><a href='/owners/pets/<%= owner.id %>'><%= owner.name %></a></td>
-    <td><%= owner.mobile %></td>
-    <td><%= owner.email %></td>
+    <td><a href='/owners/pets/<%= owner.id %>'><%= owner.mobile %></a></td>
+    <td><a href='/owners/pets/<%= owner.id %>'><%= owner.email %></a></td>
   </tr>
   <% end %>
 </table>
