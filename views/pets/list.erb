@@ -8,9 +8,9 @@
   <% @pets.each do |pet| %>
   <tr>
     <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.name%> </a></td>
-    <td><%= pet.pettype.pet_type%></td>
-    <td><%= pet.vet.name%></td>
-    <td><%= pet.owner.name%></td>
+    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.pettype.pet_type%></a></td>
+    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.vet.name%></a></td>
+    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.owner.name%></a></td>
   </tr>
   <% end %>
 </table>
