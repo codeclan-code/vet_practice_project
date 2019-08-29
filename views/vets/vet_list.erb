@@ -18,12 +18,14 @@
       <th style = "background-color:green;">Pet Name</th>
       <th>Pet Type</th>
       <th>Assigned Vet</th>
+      <th>Edit</th>
     </tr>
     <% @pets.each do |pet| %>
     <tr>
       <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.name%> </a></td>
     <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.pettype.pet_type%></a></td>
       <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.vet.name%></a></td>
+      <td><a href = "/pets/<%= pet.id%>/edit" ><i class="fas fa-user-edit"></i><a></td>
     </tr>
     <% end %>
   </table>

@@ -10,6 +10,7 @@ not_found do
   erb :oops, :layout => (:"home_layout")
 end
 
+#Use non default home_layout
 get '/' do
   @title = "Blue Cat Vet Practice"
     erb :index, :layout => (:"home_layout")
