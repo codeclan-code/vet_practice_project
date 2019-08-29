@@ -15,3 +15,10 @@ get '/' do
   @title = "Blue Cat Vet Practice"
     erb :index, :layout => (:"home_layout")
 end
+
+
+
+
+
+
+# 
