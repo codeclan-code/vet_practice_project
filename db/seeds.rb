@@ -105,66 +105,66 @@ pet1 = Pet.new({
   'vet_id' => vet1.id,
   'pet_type_id' => pettype1.id,
   'owner_id' => owner1.id
-   })
+  })
 
-pet1.save
+  pet1.save
 
-pet2 = Pet.new({
-  'name' => 'King',
-  'date_of_birth' => '12.12.12',
-  'treatment_notes' => 'Treatment Notes',
-  'vet_id' => vet2.id,
-  'pet_type_id' => pettype2.id,
-  'owner_id' => owner2.id
-   })
+  pet2 = Pet.new({
+    'name' => 'King',
+    'date_of_birth' => '12.12.12',
+    'treatment_notes' => 'Treatment Notes',
+    'vet_id' => vet2.id,
+    'pet_type_id' => pettype2.id,
+    'owner_id' => owner2.id
+    })
 
-pet2.save
+    pet2.save
 
-pet3 = Pet.new({
-  'name' => 'Wee Jessie',
-  'date_of_birth' => '06.09.17',
-  'treatment_notes' => 'Jessie\'s Treatment Notes',
-  'vet_id' => vet2.id,
-  'pet_type_id' => pettype2.id,
-  'owner_id' => owner2.id
-   })
+    pet3 = Pet.new({
+      'name' => 'Wee Jessie',
+      'date_of_birth' => '06.09.17',
+      'treatment_notes' => 'Jessie\'s Treatment Notes',
+      'vet_id' => vet2.id,
+      'pet_type_id' => pettype2.id,
+      'owner_id' => owner2.id
+      })
 
-pet3.save
+      pet3.save
 
-pet4 = Pet.new({
-  'name' => 'Pigpen',
-  'date_of_birth' => '12.12.12',
-  'treatment_notes' => 'Pigpen\'s Treatment Notes',
-  'vet_id' => vet3.id,
-  'pet_type_id' => pettype5.id,
-  'owner_id' => owner3.id
-   })
+      pet4 = Pet.new({
+        'name' => 'Pigpen',
+        'date_of_birth' => '12.12.12',
+        'treatment_notes' => 'Pigpen\'s Treatment Notes',
+        'vet_id' => vet3.id,
+        'pet_type_id' => pettype5.id,
+        'owner_id' => owner3.id
+        })
 
-pet4.save
+        pet4.save
 
-pet5 = Pet.new({
-  'name' => 'Pete',
-  'date_of_birth' => '12.12.14',
-  'treatment_notes' => 'Pete\'s Treatment Notes',
-  'vet_id' => vet3.id,
-  'pet_type_id' => pettype5.id,
-  'owner_id' => owner4.id
-   })
+        pet5 = Pet.new({
+          'name' => 'Pete',
+          'date_of_birth' => '12.12.14',
+          'treatment_notes' => 'Pete\'s Treatment Notes',
+          'vet_id' => vet3.id,
+          'pet_type_id' => pettype5.id,
+          'owner_id' => owner4.id
+          })
 
-pet5.save
+          pet5.save
 
-pet6 = Pet.new({
-  'name' => 'Kandy',
-  'date_of_birth' => '12.12.14',
-  'treatment_notes' => 'Pete\'s Treatment Notes',
-  'vet_id' => vet3.id,
-  'pet_type_id' => pettype7.id,
-  'owner_id' => owner5.id
-   })
+          pet6 = Pet.new({
+            'name' => 'Kandy',
+            'date_of_birth' => '12.12.14',
+            'treatment_notes' => 'Pete\'s Treatment Notes',
+            'vet_id' => vet3.id,
+            'pet_type_id' => pettype7.id,
+            'owner_id' => owner5.id
+            })
 
-pet6.save
+            pet6.save
 
 
 
-binding.pry
-nil
+            binding.pry
+            nil

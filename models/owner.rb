@@ -37,53 +37,53 @@ class Owner
       name,
       mobile,
       email
-    ) =
-    (
-      $1, $2, $3
-    )
-    WHERE id = $4"
-    values = [@name, @mobile, @email, @id]
-    SqlRunner.run(sql, values)
-  end
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [@name, @mobile, @email, @id]
+      SqlRunner.run(sql, values)
+    end
 
-  def delete()
-    sql = "DELETE FROM owners
-    WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
+    def delete()
+      sql = "DELETE FROM owners
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
 
-  def self.find(id)
-    sql = "SELECT * FROM owners
-    WHERE id = $1"
-    values = [id]
-    result = SqlRunner.run(sql ,values).first
-    owner = Owner.new(result)
-    return owner
-  end
+    def self.find(id)
+      sql = "SELECT * FROM owners
+      WHERE id = $1"
+      values = [id]
+      result = SqlRunner.run(sql ,values).first
+      owner = Owner.new(result)
+      return owner
+    end
 
-  def owner()
-    owner = Owner.find(@id)
-    return owner
-  end
+    def owner()
+      owner = Owner.find(@id)
+      return owner
+    end
 
-  def self.all()
-    sql = "SELECT * FROM owners"
-    owner_data = SqlRunner.run(sql)
-    owners = map_items(owner_data)
-    return owners
-  end
+    def self.all()
+      sql = "SELECT * FROM owners"
+      owner_data = SqlRunner.run(sql)
+      owners = map_items(owner_data)
+      return owners
+    end
 
-  def self.map_items(owner_data)
-    return owner_data.map { |owner| Owner.new(owner) }
-  end
+    def self.map_items(owner_data)
+      return owner_data.map { |owner| Owner.new(owner) }
+    end
 
-  def self.ownerspets(owner_id)
-    sql = "SELECT * FROM pets WHERE owner_id = $1"
-    values  = [owner_id]
-    pet_data = SqlRunner.run(sql, values)
-    pets = map_items(pet_data)
-    return pets
-  end
+    def self.ownerspets(owner_id)
+      sql = "SELECT * FROM pets WHERE owner_id = $1"
+      values  = [owner_id]
+      pet_data = SqlRunner.run(sql, values)
+      pets = map_items(pet_data)
+      return pets
+    end
 
-end
+  end

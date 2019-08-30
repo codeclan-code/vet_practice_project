@@ -13,17 +13,12 @@ get '/owners' do # index
   erb(:"owners/list")
 end
 
-# # GET NEW PET FORM
 get '/owners/new' do # new
-  # @pet_types = PetType.all()
-  # @pets = Pet.all()
-  # @vets = Vet.all()
   @owners = Owner.all()
   @title = "Register a New Owner"
   erb( :"owners/new" )
 end
-#
-# # POST FORM TO CREATE RECORD
+
 post '/owners' do # create
   @owner = Owner.new( params )
   @owner.save()
@@ -36,39 +31,28 @@ get '/owners/schedule' do # index
   @pets = Pet.all()
   @owners = Owner.all()
   @title = "Owner's Schedule"
-  # erb (:"vets/index"), :layout => (:"vets/vets_layout")
   erb (:"owners/index")
 end
-#
-# # GET PET BY ID TO EDIT
+
 get '/owners/:id' do
-  # @pet_types = PetType.all()
-  # @pets = Pet.all()
-  # @vets = Vet.all()
   @owner = Owner.find(params['id'])
   @title = "Owner Details"
   erb(:"owners/show")
 end
 #
 get '/owners/:id/edit' do
-  # @vets = Vet.all
-  # @owners = Owner.all()
-  # @pettype = PetType.all
   @owner = Owner.find(params['id'])
   @title = "Edit Owner Details"
   erb(:"owners/edit")
 end
-#
-# # update - POST FORM AFTER EDIT
+
 post '/owners/:id' do
   owner = Owner.new(params)
   owner.update
   @title = "Update Owner Details"
   redirect to "/owners/#{params['id']}"
-  # redirect to confrmation page
 end
 #
-# # destroy - POST ID DELETE
 post '/owners/:id/delete' do
   owner = Owner.find(params['id'])
   owner.delete

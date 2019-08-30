@@ -5,73 +5,73 @@
 
     <div class="input_wrapper">
       <label for="pet-name-field">Pet Name:</label>
-    <input
-    type="text"
-    name="name"
-    id="pet-name-field"
-    value="<%= @pet.name %>"
-    />
+      <input
+      type="text"
+      name="name"
+      id="pet-name-field"
+      value="<%= @pet.name %>"
+      />
     </div>
 
-  <div class="input_wrapper">
+    <div class="input_wrapper">
       <label for="date-of-birth-field">Date of Birth:</label>
-    <input
-    type="text"
-    name="date_of_birth"
-    id="date-of-birth-field"
-    value="<%= @pet.date_of_birth %>"
-    />
+      <input
+      type="text"
+      name="date_of_birth"
+      id="date-of-birth-field"
+      value="<%= @pet.date_of_birth %>"
+      />
     </div>
 
     <div class="input_wrapper">
       <label for="pet-type-selection">Select Pet Type:</label>
-    <select name="pet_type_id" id="pet-type-selection">
-      <% @pettype.each do |type| %>
-      <% if type.id == @pet.pet_type_id %>
-      <option value=<%= type.id %> selected><%= type.pet_type.capitalize %></option>
-      <% else %>
-      <option value=<%= type.id %>><%= type.pet_type.capitalize %></option>
-      <% end %>
-      <% end %>
-    </select>
+      <select name="pet_type_id" id="pet-type-selection">
+        <% @pettype.each do |type| %>
+        <% if type.id == @pet.pet_type_id %>
+        <option value=<%= type.id %> selected><%= type.pet_type.capitalize %></option>
+        <% else %>
+        <option value=<%= type.id %>><%= type.pet_type.capitalize %></option>
+        <% end %>
+        <% end %>
+      </select>
     </div>
 
-  <div class="input_wrapper">
+    <div class="input_wrapper">
       <label for="owner-selection">Select Owner:</label>
-    <select name="owner_id" id="owner-selection">
-      <% @owners.each do |owner| %>
-      <% if owner.id == @pet.owner_id %>
-      <option value=<%= owner.id %> selected><%= owner.name %></option>
-      <% else %>
-      <option value=<%= owner.id %>><%= owner.name %></option>
-      <% end %>
-      <% end %>
-    </select>
+      <select name="owner_id" id="owner-selection">
+        <% @owners.each do |owner| %>
+        <% if owner.id == @pet.owner_id %>
+        <option value=<%= owner.id %> selected><%= owner.name %></option>
+        <% else %>
+        <option value=<%= owner.id %>><%= owner.name %></option>
+        <% end %>
+        <% end %>
+      </select>
     </div>
 
-  <div class="input_wrapper">
+    <div class="input_wrapper">
       <label for="vet-selection">Select Vet:</label>
-    <select name="vet_id" id="vet-selection">
-      <% @vets.each do |vet| %>
-      <% if vet.id == @pet.vet_id %>
-      <option value=<%= vet.id %> selected><%= vet.name %></option>
-      <% else %>
-      <option value=<%= vet.id %>><%= vet.name %></option>
-      <% end %>
-      <% end %>
-    </select>
+      <select name="vet_id" id="vet-selection">
+        <% @vets.each do |vet| %>
+        <% if vet.id == @pet.vet_id %>
+        <option value=<%= vet.id %> selected><%= vet.name %></option>
+        <% else %>
+        <option value=<%= vet.id %>><%= vet.name %></option>
+        <% end %>
+        <% end %>
+      </select>
     </div>
 
     <div class="input_wrapper">
       <label for="treatment-notes">Treatment Notes:</label>
-    <textarea rows="10" cols="50" id="treatment-notes"
-    name='treatment_notes'>
-    <%= @pet.treatment_notes %>
-  </textarea>
+      <textarea rows="10" cols="50" id="treatment-notes"
+      name='treatment_notes'>
+      <%= @pet.treatment_notes %>
+    </textarea>
   </div>
 
-<div class="input_wrapper">
+  <div class="input_wrapper">
     <input type="submit" value="Update Pet">
-    </div>
+  </div>
 </form>
 </div>

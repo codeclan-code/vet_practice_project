@@ -12,28 +12,28 @@
     <td><a href='/owners/pets/<%= owner.id %>'><%= owner.mobile %></a></td>
     <td><a href='/owners/pets/<%= owner.id %>'><%= owner.email %></a></td>
     <td><a href='/owners/<%= owner.id %>/edit'><i class="fas fa-user-edit"></i><a></td>
-    <td><a href='/owners/<%= owner.id %>'><i class="fas fa-user-minus"></i><a></td>
-  </tr>
-  <% end %>
-</table>
+      <td><a href='/owners/<%= owner.id %>'><i class="fas fa-user-minus"></i><a></td>
+      </tr>
+      <% end %>
+    </table>
 
-<hr />
+    <hr />
 
-<table>
-  <tr>
-    <th style = "background-color:green;">Pet Name</th>
-    <th>Pet Type</th>
-    <th>Assigned Vet</th>
-    <th>Owner</th>
-    <th>Edit</th>
-  </tr>
-  <% @pets.each do |pet| %>
-  <tr>
-    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.name%> </a></td>
-    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.pettype.pet_type%> </a></td>
-    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.vet.name%> </a></td>
-    <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.owner.name%> </a></td>
-   <td><a href = "/pets/<%= pet.id%>/edit" ><i class="fas fa-user-edit"></i><a></td>
-  </tr>
-  <% end %>
-</table>
+    <table>
+      <tr>
+        <th style = "background-color:green;">Pet Name</th>
+        <th>Pet Type</th>
+        <th>Assigned Vet</th>
+        <th>Owner</th>
+        <th>Edit</th>
+      </tr>
+      <% @pets.each do |pet| %>
+      <tr>
+        <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.name%> </a></td>
+        <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.pettype.pet_type%> </a></td>
+        <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.vet.name%> </a></td>
+        <td><a href = "/pets/<%= pet.id%>/edit" ><%= pet.owner.name%> </a></td>
+        <td><a href = "/pets/<%= pet.id%>/edit" ><i class="fas fa-user-edit"></i><a></td>
+        </tr>
+        <% end %>
+      </table>

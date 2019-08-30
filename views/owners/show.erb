@@ -1,14 +1,3 @@
-<!--
-<div class = "owner_details">
-
-  <p><strong>Owner Name:</strong> <%= @owner.name %></p>
-
-  <p><strong>Mobile:</strong> <%= @owner.mobile %></p>
-
-  <p><strong>Email:</strong> <%= @owner.email %></p>
-
-</div> -->
-
 <table>
   <tr>
     <td><strong>Owner Name:</strong></td><td><%= @owner.name%></td>
@@ -22,8 +11,8 @@
 </table>
 
 <table class="button-bar">
-<tr>
-  <td><a href="/owners/<%= @owner.id %>/edit"><button type="button">Edit</button></a></td>
-  <td><form action="/owners/<%= @owner.id %>/delete" method="POST"><input type="submit" value="Delete"  style = "width:100px;"></form></td>
-</tr>
+  <tr>
+    <td><a href="/owners/<%= @owner.id %>/edit"><button type="button">Edit</button></a></td>
+    <td><form action="/owners/<%= @owner.id %>/delete" method="POST"><input type="submit" value="Delete"  style = "width:100px;"></form></td>
+  </tr>
 </table>

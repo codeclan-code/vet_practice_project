@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <link rel="stylesheet" type="text/css" href="/styles/forms.css">
   <link rel="stylesheet" type="text/css" href="/styles/tables.css">
-<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
@@ -20,31 +20,22 @@
       <div class="content-box">
         <section id="content">
           <h1>Vet's Schedule</h1>
-          <!-- <ul>
-          <li><a href="/vets/pets/1">Dr Smith</a></li>
-          <li><a href="/vets/pets/2">Dr Jones</a></li>
-        </ul> -->
-        <!-- <label for="vet-selection">Select Vet:</label>
-        <select name="vet_id" id="vet-selection">
-        <% @vets.each do |vet| %>
-        <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
-        <% end %>
-      </select> -->
+          <% @vets.each do |vet| %>
+          <option value=<%= vet.id %>><%= vet.name.capitalize %></option>
+          <% end %>
 
-      <!--REFACTOR ABOVE WITH ul/li -->
-
-      <ul>
-        <% @vets.each do |vet| %>
-        <li>
-          <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
-        </li>
-        <% end %>
-      </ul>
-      <%= yield %>
-    </section>
-  </div>
-</div>
-</main>
-<%= erb(:"nav/footer") %>
+          <ul>
+            <% @vets.each do |vet| %>
+            <li>
+              <a href='/vets/pets/<%= vet.id %>'><%= vet.name %></a>
+            </li>
+            <% end %>
+          </ul>
+          <%= yield %>
+        </section>
+      </div>
+    </div>
+  </main>
+  <%= erb(:"nav/footer") %>
 </body>
 </html>

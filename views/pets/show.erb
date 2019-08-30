@@ -1,41 +1,29 @@
 <h2><%= @pet.name %></h2>
 
-<!-- <div class="form-wrapper">
-  <p><strong>Pet Name:</strong> <%= @pet.name%></p>
-  <p><strong>Date of Birth:</strong> <%= @pet.date_of_birth%></p>
-  <p><strong>Type:</strong> <%= @pet.pettype.pet_type %></p>
-  <p><strong>Owner's Name:</strong> <%= @pet.owner.name %></p>
-  <p><strong>Vet: </strong><%= @pet.vet.name %></p>
-  <p><strong>Treatment Notes:</strong></p>
-  <p><%= @pet.treatment_notes %> </p>
-</div> -->
-
-<div class="xform-wrapper">
-<table>
-  <tr>
-    <td><strong>Pet Name:</strong></td><td><%= @pet.name%></td>
-  </tr>
-  <tr>
-    <td><strong>Date of Birth:</strong></td><td><%= @pet.date_of_birth%></td>
-  </tr>
-  <tr>
-    <td><strong>Type:</strong></td><td><%= @pet.pettype.pet_type%></td>
-  </tr>
-  <tr>
-    <td><strong>Owner's Name:</strong></td><td><%= @pet.owner.name%></td>
-  </tr>
-  <tr>
-    <td><strong>Vet:</strong></td><td><%= @pet.vet.name%></td>
-  </tr>
-  <tr>
-    <td><strong>Treatment Notes:</strong></td>
-  </tr>
-  <tr>
-    <td><%= @pet.treatment_notes%></td>
-  </tr>
-</table>
+<div class="noform-wrapper">
+  <table>
+    <tr>
+      <td><strong>Pet Name:</strong></td><td><%= @pet.name%></td>
+    </tr>
+    <tr>
+      <td><strong>Date of Birth:</strong></td><td><%= @pet.date_of_birth%></td>
+    </tr>
+    <tr>
+      <td><strong>Type:</strong></td><td><%= @pet.pettype.pet_type%></td>
+    </tr>
+    <tr>
+      <td><strong>Owner's Name:</strong></td><td><%= @pet.owner.name%></td>
+    </tr>
+    <tr>
+      <td><strong>Vet:</strong></td><td><%= @pet.vet.name%></td>
+    </tr>
+    <tr>
+      <td><strong>Treatment Notes:</strong></td>
+    </tr>
+    <tr>
+      <td><%= @pet.treatment_notes%></td>
+    </tr>
+  </table>
 
   <div>
-
-<!-- <p><a href="/pets/<%= @pet.id %>/edit">Edit</a></p> -->
-<form action="/pets/<%= @pet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+    <form action="/pets/<%= @pet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

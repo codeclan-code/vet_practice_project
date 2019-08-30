@@ -62,56 +62,56 @@ class Pet
       vet_id,
       treatment_notes,
       owner_id
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6
-    )
-    WHERE id = $7"
-    values = [@name, @date_of_birth, @pet_type_id, @vet_id, @treatment_notes, @owner_id, @id]
-    SqlRunner.run(sql, values)
-  end
+      ) =
+      (
+        $1, $2, $3, $4, $5, $6
+      )
+      WHERE id = $7"
+      values = [@name, @date_of_birth, @pet_type_id, @vet_id, @treatment_notes, @owner_id, @id]
+      SqlRunner.run(sql, values)
+    end
 
-  def delete()
-    sql = "DELETE FROM pets
-    WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
+    def delete()
+      sql = "DELETE FROM pets
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
 
-  def self.all()
-    sql = "SELECT * FROM pets"
-    pet_data = SqlRunner.run(sql)
-    pets = map_items(pet_data)
-    return pets
-  end
+    def self.all()
+      sql = "SELECT * FROM pets"
+      pet_data = SqlRunner.run(sql)
+      pets = map_items(pet_data)
+      return pets
+    end
 
-  def self.map_items(pet_data)
-    return pet_data.map { |pet| Pet.new(pet) }
-  end
+    def self.map_items(pet_data)
+      return pet_data.map { |pet| Pet.new(pet) }
+    end
 
-  def self.find(id)
-    sql = "SELECT * FROM pets
-    WHERE id = $1"
-    values = [id]
-    result = SqlRunner.run(sql, values).first
-    pet = Pet.new(result)
-    return pet
-  end
+    def self.find(id)
+      sql = "SELECT * FROM pets
+      WHERE id = $1"
+      values = [id]
+      result = SqlRunner.run(sql, values).first
+      pet = Pet.new(result)
+      return pet
+    end
 
-  def self.vetspets(vet_id)
-    sql = "SELECT * FROM pets WHERE vet_id = $1"
-    values  = [vet_id]
-    pet_data = SqlRunner.run(sql, values)
-    pets = map_items(pet_data)
-    return pets
-  end
+    def self.vetspets(vet_id)
+      sql = "SELECT * FROM pets WHERE vet_id = $1"
+      values  = [vet_id]
+      pet_data = SqlRunner.run(sql, values)
+      pets = map_items(pet_data)
+      return pets
+    end
 
-  def self.ownerspets(owner_id)
-    sql = "SELECT * FROM pets WHERE owner_id = $1"
-    values  = [owner_id]
-    pet_data = SqlRunner.run(sql, values)
-    pets = map_items(pet_data)
-    return pets
-  end
+    def self.ownerspets(owner_id)
+      sql = "SELECT * FROM pets WHERE owner_id = $1"
+      values  = [owner_id]
+      pet_data = SqlRunner.run(sql, values)
+      pets = map_items(pet_data)
+      return pets
+    end
 
-end
+  end

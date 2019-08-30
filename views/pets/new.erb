@@ -9,11 +9,11 @@
       name="name"
       id="pet-name-field"
       />
-      </div>
+    </div>
 
 
-      <div class="input_wrapper">
-        <label for="date-of-birth-field">Date of Birth:</label>
+    <div class="input_wrapper">
+      <label for="date-of-birth-field">Date of Birth:</label>
       <input required
       type="text"
       name="date_of_birth"
@@ -21,8 +21,8 @@
       />
     </div>
 
-      <div class="input_wrapper">
-        <label for="pet-type-selection"  style="visibility: hidden;">>Select Pet:</label>
+    <div class="input_wrapper">
+      <label for="pet-type-selection"  style="visibility: hidden;">>Select Pet:</label>
       <select name="pet_type_id" id="pet-type-selection" required>
         <option value = "" selected>Select Pet Type</option>
         <% @pet_types.each do |pet_type| %>
@@ -31,8 +31,8 @@
       </select>
     </div>
 
-      <div class="input_wrapper">
-        <label for="vet-selection" style="visibility: hidden;">Select Vet:</label>
+    <div class="input_wrapper">
+      <label for="vet-selection" style="visibility: hidden;">Select Vet:</label>
       <select name="vet_id" id="vet-selection" required>
         <option value = "" selected>Select Vet</option>
         <% @vets.each do |vet| %>
@@ -41,8 +41,8 @@
       </select>
     </div>
 
-      <div class="input_wrapper">
-        <label for="owner-selection" style="visibility: hidden;">Select Owner:</label>
+    <div class="input_wrapper">
+      <label for="owner-selection" style="visibility: hidden;">Select Owner:</label>
       <select name="owner_id" id="owner-selection">
         <option value ="" selected>Select Owner</option>
         <% @owners.each do |owner| %>
@@ -52,16 +52,16 @@
     </div>
 
     <div class="input_wrapper">
-        <label for="treatment-notes">Treatment Notes:</label>
+      <label for="treatment-notes">Treatment Notes:</label>
       <textarea rows="5" cols="50" id="treatment-notes" name='treatment_notes'>
       </textarea>
     </div>
 
-  <div class="input_wrapper">
+    <div class="input_wrapper">
       <div class="button">
         <input type="submit" value="Register Pet">
       </div>
-      </div>
+    </div>
 
-    </form>
-  </div>
+  </form>
+</div>
